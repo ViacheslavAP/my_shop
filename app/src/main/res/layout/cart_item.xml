@@ -71,7 +71,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/lessProduct"
+            android:id="@+id/lessProductBasket"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginTop="@dimen/margin_5"
@@ -91,19 +91,19 @@
             android:layout_marginTop="@dimen/margin_10"
             android:text="@string/_1"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/lessProduct"
-            app:layout_constraintTop_toBottomOf="@id/lessProduct" />
+            app:layout_constraintStart_toEndOf="@id/lessProductBasket"
+            app:layout_constraintTop_toBottomOf="@id/lessProductBasket" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/moreProduct"
+            android:id="@+id/moreProductBasket"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="@dimen/margin_5"
             android:src="@drawable/ic_more"
             android:background="@drawable/rectangle"
             android:elevation="10dp"
-            app:layout_constraintStart_toEndOf="@id/lessProduct"
-            app:layout_constraintTop_toTopOf="@id/lessProduct"
+            app:layout_constraintStart_toEndOf="@id/lessProductBasket"
+            app:layout_constraintTop_toTopOf="@id/lessProductBasket"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

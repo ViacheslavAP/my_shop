@@ -33,6 +33,11 @@ class CartViewModel(private val cartUseCase: CartUseCase) : ViewModel() {
         return cartUseCase.loadFoodToCartFromCartProduct(idProduct)
     }
 
+    fun updateProductFromCart(cartModel: CartModel) = viewModelScope.launch {
+
+        cartUseCase.updateProductFromCart(cartModel)
+    }
+
     //удаляет товар из корзины
     fun deleteProductFromCart(idProduct: Int) = viewModelScope.launch {
 

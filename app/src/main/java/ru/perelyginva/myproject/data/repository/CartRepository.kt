@@ -21,6 +21,11 @@ class CartRepository(private val dao: CartDao): CartCall {
     override fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>>{
         return dao.loadFoodToCartFromCartProduct(idProduct)
     }
+//обновление позиции товара
+    override suspend  fun updateProductFromCart(cartModel: CartModel){
+
+        dao.updateProductFromCart(cartModel)
+    }
 
     override suspend fun deleteProductFromCart(idProduct: Int){
 

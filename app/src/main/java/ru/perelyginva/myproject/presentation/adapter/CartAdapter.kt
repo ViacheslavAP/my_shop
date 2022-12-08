@@ -8,7 +8,11 @@ import com.squareup.picasso.Picasso
 import ru.perelyginva.myproject.data.models.CartModel
 import ru.perelyginva.myproject.databinding.CartItemBinding
 
-class CartAdapter(private val deleteFromCart: (CartModel) -> Unit) :
+class CartAdapter(
+    private val deleteFromCart: (CartModel) -> Unit,
+    private val lessCount: (CartModel) -> Unit,
+    private val moreCount: (CartModel) -> Unit,
+) :
     RecyclerView.Adapter<CartAdapter.CartHolder>() {
 
     private val productsFromCart = ArrayList<CartModel>()//получаем содержимое карзины
@@ -22,7 +26,7 @@ class CartAdapter(private val deleteFromCart: (CartModel) -> Unit) :
     }
 
     override fun onBindViewHolder(holder: CartHolder, position: Int) {
-        holder.bind(productsFromCart[position], deleteFromCart)
+        holder.bind(productsFromCart[position], deleteFromCart, lessCount, moreCount)
     }
 
     override fun getItemCount(): Int {
@@ -41,6 +45,8 @@ class CartAdapter(private val deleteFromCart: (CartModel) -> Unit) :
 
         fun bind(
             cartModel: CartModel, deleteFromCart: (CartModel) -> Unit,
+            lessCount: (CartModel) -> Unit,
+            moreCount: (CartModel) -> Unit,
         ) {
 
             val getImage = cartModel.image
@@ -52,6 +58,15 @@ class CartAdapter(private val deleteFromCart: (CartModel) -> Unit) :
             binding.removeFromCartProductCart.setOnClickListener(View.OnClickListener {
 
                 deleteFromCart(cartModel)
+            })
+
+            binding.moreProductBasket.setOnClickListener(View.OnClickListener {
+
+                moreCount(cartModel)
+            })
+
+            binding.lessProductBasket.setOnClickListener(View.OnClickListener {
+                lessCount(cartModel)
             })
         }
     }

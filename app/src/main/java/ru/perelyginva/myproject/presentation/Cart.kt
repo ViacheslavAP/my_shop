@@ -39,9 +39,11 @@ class Cart : Fragment(), View.OnClickListener {
     private fun initRecyclerCart() {
 
         binding?.listCart?.layoutManager = LinearLayoutManager(context)
-        cartAdapter = CartAdapter { cartModel: CartModel ->
-            deleteFromCart(cartModel)
-        }
+        cartAdapter = CartAdapter ({ cartModel: CartModel -> deleteFromCart(cartModel) },
+            { cartModel: CartModel -> lessCount(cartModel) } ,
+
+            { cartModel: CartModel -> moreCount(cartModel) }
+            )
         binding?.listCart?.adapter = cartAdapter
 
     }
@@ -78,9 +80,22 @@ class Cart : Fragment(), View.OnClickListener {
 
         if (count < 1) {
 
-
+            cartViewModel.updateProductFromCart(CartModel(
+                cartModel.id,
+                cartModel.name,
+                cartModel.image,
+                cartModel.price,
+                cartModel.idProduct,
+                "1"))
         } else {
 
+            cartViewModel.updateProductFromCart(CartModel(
+                cartModel.id,
+                cartModel.name,
+                cartModel.image,
+                cartModel.price,
+                cartModel.idProduct,
+                count.toString()))
         }
     }
 
@@ -90,6 +105,12 @@ class Cart : Fragment(), View.OnClickListener {
 
         count++
 
-
+        cartViewModel.updateProductFromCart(CartModel(
+            cartModel.id,
+            cartModel.name,
+            cartModel.image,
+            cartModel.price,
+            cartModel.idProduct,
+            count.toString()))
     }
 }
