@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import ru.perelyginva.myproject.data.models.CartModel
 
 @Dao
@@ -19,6 +20,9 @@ interface CartDao {
 
     @Query("SELECT * FROM cart_data_table WHERE cart_idProduct =:idProduct")
     fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>>
+
+    @Update
+    suspend fun updateProductFromCart(cartModel: CartModel)
 
     @Query("DELETE  FROM cart_data_table WHERE cart_id =:idProduct")
     suspend fun deleteProductFromCart(idProduct: Int)

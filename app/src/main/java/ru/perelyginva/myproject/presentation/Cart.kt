@@ -60,15 +60,36 @@ class Cart : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        when(view?.id){
+        when (view?.id) {
 
             R.id.clearCart -> cartViewModel.clearCart()
 
             R.id.checkoutCart -> {
 
-
             }
+        }
+    }
+
+    private fun lessCount(cartModel: CartModel) {
+
+        var count: Int = cartModel.count.toInt()
+
+        count--
+
+        if (count < 1) {
+
+
+        } else {
 
         }
+    }
+
+    private fun moreCount(cartModel: CartModel) {
+
+        var count: Int = cartModel.count.toInt()
+
+        count++
+
+
     }
 }
