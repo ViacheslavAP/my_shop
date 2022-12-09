@@ -10,22 +10,27 @@ import ru.perelyginva.myproject.data.dataSourceIMPL.FoodApiDataSourceIMPL
 import ru.perelyginva.myproject.data.dataSourceIMPL.FoodDataSourceIMPL
 import ru.perelyginva.myproject.data.localDB.CartDB
 import ru.perelyginva.myproject.data.localDB.FoodDB
+import ru.perelyginva.myproject.data.localDB.OrderDB
 import ru.perelyginva.myproject.data.repository.CartRepository
 import ru.perelyginva.myproject.data.repository.FoodRepository
+import ru.perelyginva.myproject.data.repository.OrderLocalRepository
 import ru.perelyginva.myproject.domain.repository.CartCall
 import ru.perelyginva.myproject.domain.repository.FoodCall
+import ru.perelyginva.myproject.domain.repository.OrderLocalCall
 import ru.perelyginva.myproject.domain.useCase.CartUseCase
 import ru.perelyginva.myproject.domain.useCase.FoodUseCase
+import ru.perelyginva.myproject.domain.useCase.OrderLocalUseCase
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.FoodViewModel
+import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
 
 val food = module {
 
     single { Room.databaseBuilder(androidContext(), FoodDB::class.java, "foodDB").build() }
 
-    single { get <FoodDB>().foodDao }
+    single { get<FoodDB>().foodDao }
 
-    single<FoodDataSource> { FoodDataSourceIMPL(get())}
+    single<FoodDataSource> { FoodDataSourceIMPL(get()) }
 
     single<FoodApiDataSource> { FoodApiDataSourceIMPL(get()) }
 
@@ -36,15 +41,28 @@ val food = module {
     viewModel { FoodViewModel(get()) }
 }
 
-val cart  = module {
+val cart = module {
 
     single { Room.databaseBuilder(androidContext(), CartDB::class.java, "cartDB").build() }
 
-    single { get <CartDB>().cartDao }
+    single { get<CartDB>().cartDao }
 
     single<CartCall> { CartRepository(get()) }
 
     single { CartUseCase(get()) }
 
     viewModel { CartViewModel(get()) }
+}
+
+val order = module {
+
+    single { Room.databaseBuilder(androidContext(), OrderDB::class.java, "orderDB").build() }
+
+    single { get<OrderDB>().orderLocalDao }
+
+    single<OrderLocalCall> { OrderLocalRepository(get()) }
+
+    single { OrderLocalUseCase(get()) }
+
+    viewModel { OrderLocalViewModel(get()) }
 }

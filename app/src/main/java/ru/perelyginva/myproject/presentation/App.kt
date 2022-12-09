@@ -6,6 +6,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import ru.perelyginva.myproject.presentation.di.cart
 import ru.perelyginva.myproject.presentation.di.food
+import ru.perelyginva.myproject.presentation.di.order
 
 class App: Application() {
 
@@ -18,7 +19,7 @@ class App: Application() {
 
             androidContext(this@App)
 
-            modules(food, cart)
+            modules(food, cart, order)
         }
     }
 }
