@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/rectangle"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/check_out"
         android:layout_marginStart="@dimen/margin_5"
         android:layout_marginEnd="@dimen/margin_5"
