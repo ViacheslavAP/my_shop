@@ -86,7 +86,8 @@ class Cart : Fragment(), View.OnClickListener {
                 cartModel.image,
                 cartModel.price,
                 cartModel.idProduct,
-                "1"))
+                "1",
+            (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
         } else {
 
             cartViewModel.updateProductFromCart(CartModel(
@@ -95,7 +96,8 @@ class Cart : Fragment(), View.OnClickListener {
                 cartModel.image,
                 cartModel.price,
                 cartModel.idProduct,
-                count.toString()))
+                count.toString(),
+                (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
         }
     }
 
@@ -111,6 +113,7 @@ class Cart : Fragment(), View.OnClickListener {
             cartModel.image,
             cartModel.price,
             cartModel.idProduct,
-            count.toString()))
+            count.toString(),
+            (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
     }
 }

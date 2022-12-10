@@ -11,5 +11,6 @@
     <string name="_1">1</string>
     <string name="delete">Delete</string>
     <string name="check_out">Check Out</string>
+    <string name="total">Итого</string>
 
 </resources>

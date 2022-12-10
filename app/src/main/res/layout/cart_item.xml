@@ -43,10 +43,10 @@
             android:id="@+id/priceProductCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageProductCart"
             app:layout_constraintTop_toBottomOf="@id/nameProductCart"
             tools:text="1000" />
 
@@ -58,7 +58,8 @@
             android:src="@drawable/ic_ruble"
             app:layout_constraintBottom_toBottomOf="@+id/priceProductCart"
             app:layout_constraintLeft_toRightOf="@id/priceProductCart"
-            app:layout_constraintTop_toTopOf="@+id/priceProductCart" />
+            app:layout_constraintTop_toTopOf="@+id/priceProductCart"
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/removeFromCartProductCart"
@@ -72,13 +73,13 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/lessProductBasket"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="@dimen/margin_5"
             android:layout_marginEnd="@dimen/margin_5"
-            android:src="@drawable/ic_less"
-            android:background="@drawable/rectangle"
+            android:background="@drawable/shape_oval"
             android:elevation="10dp"
+            android:src="@drawable/ic_less"
             app:layout_constraintEnd_toEndOf="@id/priceProductCart"
             app:layout_constraintStart_toStartOf="@id/priceProductCart"
             app:layout_constraintTop_toBottomOf="@id/priceProductCart"
@@ -88,20 +89,32 @@
             android:id="@+id/countProductCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="4dp"
             android:text="@string/_1"
             android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@id/lessProductBasket"
+            app:layout_constraintStart_toEndOf="@id/countProductText"
             app:layout_constraintTop_toBottomOf="@id/lessProductBasket" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/countProductText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/margin_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/moreProductBasket"
+            app:layout_constraintStart_toStartOf="@+id/lessProductBasket" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/moreProductBasket"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="@dimen/margin_5"
-            android:src="@drawable/ic_more"
-            android:background="@drawable/rectangle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="@dimen/margin_10"
+            android:background="@drawable/shape_oval"
             android:elevation="10dp"
+            android:src="@drawable/ic_more"
             app:layout_constraintStart_toEndOf="@id/lessProductBasket"
             app:layout_constraintTop_toTopOf="@id/lessProductBasket"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

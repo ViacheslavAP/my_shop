@@ -27,6 +27,7 @@ class CartAdapter(
 
     override fun onBindViewHolder(holder: CartHolder, position: Int) {
         holder.bind(productsFromCart[position], deleteFromCart, lessCount, moreCount)
+
     }
 
     override fun getItemCount(): Int {
@@ -54,6 +55,9 @@ class CartAdapter(
             binding.nameProductCart.text = cartModel.name
             binding.priceProductCart.text = cartModel.price
             binding.countProductCart.text = cartModel.count
+            if (cartModel.count.toInt() > 1)
+                binding.priceProductCart.text = cartModel.totalPrice
+
 
             binding.removeFromCartProductCart.setOnClickListener(View.OnClickListener {
 
