@@ -53,6 +53,9 @@ class Cart : Fragment(), View.OnClickListener {
         cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
             cartAdapter?.setList(it)
             cartAdapter?.notifyDataSetChanged()
+
+            val total: Int = it.sumOf<CartModel>{it.totalPrice.toInt()}
+            binding?.totalPrice?.text = total.toString()
         })
     }
 
@@ -87,7 +90,7 @@ class Cart : Fragment(), View.OnClickListener {
                 cartModel.price,
                 cartModel.idProduct,
                 "1",
-            (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
+            (cartModel.price.toInt() * 1).toString()))
         } else {
 
             cartViewModel.updateProductFromCart(CartModel(
@@ -97,7 +100,7 @@ class Cart : Fragment(), View.OnClickListener {
                 cartModel.price,
                 cartModel.idProduct,
                 count.toString(),
-                (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
+                (cartModel.price.toInt() * count).toString()))
         }
     }
 
@@ -114,6 +117,6 @@ class Cart : Fragment(), View.OnClickListener {
             cartModel.price,
             cartModel.idProduct,
             count.toString(),
-            (cartModel.price.toInt() * cartModel.count.toInt()).toString()))
+            (cartModel.price.toInt() * count).toString()))
     }
 }
