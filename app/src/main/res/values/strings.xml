@@ -12,5 +12,8 @@
     <string name="delete">Delete</string>
     <string name="check_out">Check Out</string>
     <string name="total">Итого</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_phone">Your Phone</string>
+    <string name="submit">Submit</string>
 
 </resources>

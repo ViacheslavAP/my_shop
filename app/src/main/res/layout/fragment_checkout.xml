@@ -3,8 +3,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.Checkout">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+<com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/LayoutEnterNameCheckout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_10"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:startIconTint="@color/white"
+    app:endIconTint="@android:color/holo_red_dark"
+    app:boxStrokeColor="@android:color/holo_green_light"
+    android:hint="@string/your_name"
+    app:hintTextColor="@android:color/holo_blue_light"
+    app:endIconMode="clear_text"
+    app:boxStrokeWidthFocused="@dimen/strokeWidth">
+    
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/enterNameCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:textColor="@color/black"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        />
+    
+</com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutEnterPhoneCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        app:layout_constraintTop_toBottomOf="@id/LayoutEnterNameCheckout"
+        app:layout_constraintEnd_toEndOf="@id/LayoutEnterNameCheckout"
+        app:layout_constraintStart_toStartOf="@id/LayoutEnterNameCheckout"
+        app:startIconTint="@color/white"
+        app:endIconTint="@android:color/holo_red_dark"
+        app:boxStrokeColor="@android:color/holo_green_light"
+        android:hint="@string/your_phone"
+        app:hintTextColor="@android:color/holo_blue_light"
+        app:endIconMode="clear_text"
+        app:boxStrokeWidthFocused="@dimen/strokeWidth">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterPhoneCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/submitCheckOut"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/LayoutEnterPhoneCheckout"
+    app:layout_constraintStart_toStartOf="@id/LayoutEnterPhoneCheckout"
+    app:layout_constraintEnd_toEndOf="@id/LayoutEnterPhoneCheckout"
+    android:layout_margin="@dimen/margin_20"
+    android:text="@string/submit"
+    android:textColor="@color/black"
+    android:background="@drawable/rectangle_rounded_all"
+
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
