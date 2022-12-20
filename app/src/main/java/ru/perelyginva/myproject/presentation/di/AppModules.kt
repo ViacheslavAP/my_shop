@@ -13,16 +13,20 @@ import ru.perelyginva.myproject.data.localDB.FoodDB
 import ru.perelyginva.myproject.data.localDB.OrderDB
 import ru.perelyginva.myproject.data.repository.CartRepository
 import ru.perelyginva.myproject.data.repository.FoodRepository
+import ru.perelyginva.myproject.data.repository.OrderApiRepository
 import ru.perelyginva.myproject.data.repository.OrderLocalRepository
 import ru.perelyginva.myproject.domain.repository.CartCall
 import ru.perelyginva.myproject.domain.repository.FoodCall
 import ru.perelyginva.myproject.domain.repository.OrderLocalCall
+import ru.perelyginva.myproject.domain.repository.OrdersApiCall
 import ru.perelyginva.myproject.domain.useCase.CartUseCase
 import ru.perelyginva.myproject.domain.useCase.FoodUseCase
 import ru.perelyginva.myproject.domain.useCase.OrderLocalUseCase
+import ru.perelyginva.myproject.domain.useCase.OrdersApiUseCase
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.FoodViewModel
 import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
+import ru.perelyginva.myproject.presentation.viewModel.OrdersApiViewModel
 
 val food = module {
 
@@ -65,4 +69,13 @@ val order = module {
     single { OrderLocalUseCase(get()) }
 
     viewModel { OrderLocalViewModel(get()) }
+}
+
+val orderApi = module {
+
+    single<OrdersApiCall> { OrderApiRepository() }
+
+    single { OrdersApiUseCase(get()) }
+
+    viewModel { OrdersApiViewModel(get()) }
 }

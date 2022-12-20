@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -71,6 +72,8 @@ class Cart : Fragment(), View.OnClickListener {
 
             R.id.checkoutCart -> {
 
+                val checkout = Checkout()
+                checkout.show((context as FragmentActivity).supportFragmentManager, "checkout")
             }
         }
     }

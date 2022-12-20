@@ -2,8 +2,6 @@ package ru.perelyginva.myproject.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.perelyginva.myproject.R
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.account_menu -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.content, Accaunt()).commit()
+                        .replace(R.id.content, Account()).commit()
                 }
 
             }

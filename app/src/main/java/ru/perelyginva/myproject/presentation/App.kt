@@ -7,6 +7,7 @@ import org.koin.core.context.startKoin
 import ru.perelyginva.myproject.presentation.di.cart
 import ru.perelyginva.myproject.presentation.di.food
 import ru.perelyginva.myproject.presentation.di.order
+import ru.perelyginva.myproject.presentation.di.orderApi
 
 class App: Application() {
 
@@ -19,7 +20,7 @@ class App: Application() {
 
             androidContext(this@App)
 
-            modules(food, cart, order)
+            modules(food, cart, order, orderApi)
         }
     }
 }

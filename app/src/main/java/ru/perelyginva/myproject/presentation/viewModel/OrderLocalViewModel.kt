@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import ru.perelyginva.myproject.data.models.OrderLocalModel
 import ru.perelyginva.myproject.domain.useCase.OrderLocalUseCase
 
-class OrderLocalViewModel (private val orderLocalUseCase: OrderLocalUseCase) : ViewModel() {
+class OrderLocalViewModel(private val orderLocalUseCase: OrderLocalUseCase) : ViewModel() {
 
     fun startInsert(
         nameUser: String,
@@ -23,4 +23,6 @@ class OrderLocalViewModel (private val orderLocalUseCase: OrderLocalUseCase) : V
         orderLocalUseCase.insert(orderLocalModel)
     }
 
-    }
+    val loadOrder = orderLocalUseCase.loadOrder()
+
+}
