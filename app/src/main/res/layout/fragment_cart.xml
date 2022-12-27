@@ -7,7 +7,6 @@
     tools:context=".presentation.Cart"
     android:orientation="vertical">
 
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/clearCart"
         android:layout_width="match_parent"

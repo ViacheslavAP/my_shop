@@ -29,16 +29,15 @@ class Checkout : BottomSheetDialogFragment() {
     ): View? {
         binding = FragmentCheckoutBinding.inflate(layoutInflater, container, false)
 
-
         binding?.submitCheckOut?.setOnClickListener(View.OnClickListener {
 
             cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
 
 
                 val totalOrder: Int = it.sumOf<CartModel> { it.totalPrice.toInt() }
-                val descriptionOrder = it.map {
+                val descriptionOrder = it.joinToString {
                     it.name + ": count - " + it.count + ": price - " + it.totalPrice + ": $;"
-                }.joinToString()
+                }
                 orderLocalViewModel.startInsert(
                     binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(),

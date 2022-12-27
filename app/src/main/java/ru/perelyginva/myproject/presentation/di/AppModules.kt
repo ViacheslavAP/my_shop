@@ -8,9 +8,7 @@ import ru.perelyginva.myproject.data.dataSource.FoodApiDataSource
 import ru.perelyginva.myproject.data.dataSource.FoodDataSource
 import ru.perelyginva.myproject.data.dataSourceIMPL.FoodApiDataSourceIMPL
 import ru.perelyginva.myproject.data.dataSourceIMPL.FoodDataSourceIMPL
-import ru.perelyginva.myproject.data.localDB.CardDB
-import ru.perelyginva.myproject.data.localDB.FoodDB
-import ru.perelyginva.myproject.data.localDB.OrderDB
+import ru.perelyginva.myproject.data.localDB.DatabaseFood
 import ru.perelyginva.myproject.data.repository.CartRepository
 import ru.perelyginva.myproject.data.repository.FoodRepository
 import ru.perelyginva.myproject.data.repository.OrderApiRepository
@@ -30,9 +28,9 @@ import ru.perelyginva.myproject.presentation.viewModel.OrdersApiViewModel
 
 val food = module {
 
-    single { Room.databaseBuilder(androidContext(), FoodDB::class.java, "foodDB").build() }
+    single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "foodDB").build() }
 
-    single { get<FoodDB>().foodDao }
+    single { get<DatabaseFood>().foodDao }
 
     single<FoodDataSource> { FoodDataSourceIMPL(get()) }
 
@@ -47,9 +45,9 @@ val food = module {
 
 val cart = module {
 
-    single { Room.databaseBuilder(androidContext(), CardDB::class.java, "cartDB").build() }
+    single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "cartDB").build() }
 
-    single { get<CardDB>().cartDao }
+    single { get<DatabaseFood>().cartDao }
 
     single<CartCall> { CartRepository(get()) }
 
@@ -60,9 +58,9 @@ val cart = module {
 
 val order = module {
 
-    single { Room.databaseBuilder(androidContext(), OrderDB::class.java, "orderDB").build() }
+    single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "orderDB").build() }
 
-    single { get<OrderDB>().orderLocalDao }
+    single { get<DatabaseFood>().orderLocalDao }
 
     single<OrderLocalCall> { OrderLocalRepository(get()) }
 

@@ -50,7 +50,8 @@ class FoodAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            foodModel: FoodModel, addToCart: (FoodModel) -> Unit,
+            foodModel: FoodModel,
+            addToCart: (FoodModel) -> Unit,
             removeFromCart: (FoodModel) -> Unit,
             loadFoodToCartFromCartProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit
         ){

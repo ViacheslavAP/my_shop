@@ -67,8 +67,10 @@ class Food : Fragment() {
     private fun addToCart(foodModel: FoodModel) {
 
         cartViewModel.startInsert(
-            foodModel.name, foodModel.image,
-            foodModel.price, foodModel.id.toString(),
+            foodModel.image,
+            foodModel.name,
+            foodModel.price,
+            foodModel.id.toString(),
             "1")
     }
 
