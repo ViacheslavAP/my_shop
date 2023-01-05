@@ -71,6 +71,7 @@ class Cart : Fragment(), View.OnClickListener {
             R.id.checkoutCart -> {
 
                 val checkout = Checkout()
+
                 checkout.show((context as FragmentActivity).supportFragmentManager, "checkout")
             }
         }

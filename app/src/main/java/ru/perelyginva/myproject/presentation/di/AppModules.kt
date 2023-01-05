@@ -11,7 +11,7 @@ import ru.perelyginva.myproject.data.dataSourceIMPL.FoodDataSourceIMPL
 import ru.perelyginva.myproject.data.localDB.DatabaseFood
 import ru.perelyginva.myproject.data.repository.CartRepository
 import ru.perelyginva.myproject.data.repository.FoodRepository
-import ru.perelyginva.myproject.data.repository.OrderApiRepository
+import ru.perelyginva.myproject.data.repository.OrdersApiRepository
 import ru.perelyginva.myproject.data.repository.OrderLocalRepository
 import ru.perelyginva.myproject.domain.repository.CartCall
 import ru.perelyginva.myproject.domain.repository.FoodCall
@@ -71,7 +71,7 @@ val order = module {
 
 val orderApi = module {
 
-    single<OrdersApiCall> { OrderApiRepository() }
+    single<OrdersApiCall> { OrdersApiRepository() }
 
     single { OrdersApiUseCase(get()) }
 

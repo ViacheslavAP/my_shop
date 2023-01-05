@@ -1,7 +1,6 @@
 package ru.perelyginva.myproject.data.repository
 
 
-import android.content.Context
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -9,7 +8,7 @@ import retrofit2.Response
 import ru.perelyginva.myproject.data.api.ApiClient
 import ru.perelyginva.myproject.domain.repository.OrdersApiCall
 
-class OrderApiRepository : OrdersApiCall {
+class OrdersApiRepository : OrdersApiCall {
 
    override fun insert(
         name:String,
@@ -24,12 +23,13 @@ class OrderApiRepository : OrdersApiCall {
             priceOrder)
 
         callInsertCategory?.enqueue(object: retrofit2.Callback<ResponseBody?> {
+
             override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
                 TODO("Not yet implemented")
             }
 
             override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
-                //если произошла ошибка, передает данные снова
+                //если произошла ошибка передачи данных, пробудем передать данные снова
                 insert(name, phone, descriptions, priceOrder)
             }
         })

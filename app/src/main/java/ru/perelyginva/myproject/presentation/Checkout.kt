@@ -33,11 +33,12 @@ class Checkout : BottomSheetDialogFragment() {
 
             cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
 
-
                 val totalOrder: Int = it.sumOf<CartModel> { it.totalPrice.toInt() }
-                val descriptionOrder = it.joinToString {
+
+                val descriptionOrder = it.map {
                     it.name + ": count - " + it.count + ": price - " + it.totalPrice + ": $;"
-                }
+                }.joinToString()
+
                 orderLocalViewModel.startInsert(
                     binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(),
@@ -45,15 +46,14 @@ class Checkout : BottomSheetDialogFragment() {
                     totalOrder.toString()
                 )
 
-                ordersApiViewModel.insert(binding?.enterNameCheckout?.text.toString(),
+                ordersApiViewModel.insert(
+                    binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(),
                     descriptionOrder,
                     totalOrder.toString())
 
                 binding?.enterNameCheckout?.setText("")
                 binding?.enterPhoneCheckout?.setText("")
-
-
                 dismiss()
 
                 (context as FragmentActivity)

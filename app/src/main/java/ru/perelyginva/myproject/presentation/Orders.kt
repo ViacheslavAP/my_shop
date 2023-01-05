@@ -20,8 +20,6 @@ class Orders : Fragment() {
 
         binding = FragmentOrdersBinding.inflate(layoutInflater, container, false)
 
-         
-
 
         return binding?.root
     }

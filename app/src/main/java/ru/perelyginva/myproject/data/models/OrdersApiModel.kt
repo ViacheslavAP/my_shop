@@ -1,26 +1,22 @@
 package ru.perelyginva.myproject.data.models
 
+import androidx.room.Entity
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-
+@Entity
 data class OrdersApiModel(
-    @SerializedName("id")
-    @Expose
+    @SerializedName("id") @Expose
     var id: Int? = null,
 
-    @SerializedName("name")
-    @Expose
+    @SerializedName("name") @Expose
     var name: String? = null,
 
-    @SerializedName("phone")
-    @Expose
+    @SerializedName("phone") @Expose
     var phone: String? = null,
 
-    @SerializedName("descriptions")
-    @Expose
+    @SerializedName("descriptions") @Expose
     var descriptions: String? = null,
 
-    @SerializedName("priceOrder")
-    @Expose
+    @SerializedName("priceOrder") @Expose
     var priceOrder: String? = null,
 )
