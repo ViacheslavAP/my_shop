@@ -1,6 +1,6 @@
 package ru.perelyginva.myproject.presentation
 
-import android.os.Bundle
+import  android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,7 +33,7 @@ class Checkout : BottomSheetDialogFragment() {
 
             cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
 
-                val totalOrder: Int = it.sumOf<CartModel> { it.totalPrice.toInt() }
+                val totalOrder: Int = it.sumOf { it.totalPrice.toInt() }
 
                 val descriptionOrder = it.map {
                     it.name + ": count - " + it.count + ": price - " + it.totalPrice + ": $;"
@@ -55,10 +55,10 @@ class Checkout : BottomSheetDialogFragment() {
                 binding?.enterNameCheckout?.setText("")
                 binding?.enterPhoneCheckout?.setText("")
                 dismiss()
-
+//проблема тут?
                 (context as FragmentActivity)
                     .supportFragmentManager.beginTransaction()
-                    .replace(R.id.listOrders, Account()).commit()
+                    .replace(R.id.account, Account()).commit()
                 //очитаем базу данных корзины после того как сформировали заказ
                 cartViewModel.clearCart()
             })

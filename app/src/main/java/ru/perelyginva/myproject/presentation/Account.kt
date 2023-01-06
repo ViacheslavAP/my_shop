@@ -33,7 +33,6 @@ class Account : Fragment() {
         return binding?.root
     }
 
-
     private fun initRecyclerOrder() {
 
         binding?.listOrders?.layoutManager = LinearLayoutManager(context)

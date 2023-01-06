@@ -14,7 +14,7 @@ interface CartDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
    suspend fun insert(cartModel: CartModel)
 
-    //получаем из бю
+    //получаем из б
     @Query("SELECT * FROM cart_data_table")
     fun loadFoodFromCart(): LiveData<List<CartModel>>
 
