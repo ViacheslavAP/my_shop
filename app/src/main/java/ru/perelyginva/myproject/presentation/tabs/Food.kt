@@ -1,4 +1,4 @@
-package ru.perelyginva.myproject.presentation
+package ru.perelyginva.myproject.presentation.tabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

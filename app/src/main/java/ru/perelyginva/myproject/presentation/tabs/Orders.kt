@@ -1,11 +1,10 @@
-package ru.perelyginva.myproject.presentation
+package ru.perelyginva.myproject.presentation.tabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.databinding.FragmentOrdersBinding
 
 

@@ -4,7 +4,7 @@
     android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.Account">
+    tools:context=".presentation.tabs.Account">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOrders"

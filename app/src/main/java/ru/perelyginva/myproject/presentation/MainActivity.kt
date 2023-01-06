@@ -6,6 +6,10 @@ import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.databinding.ActivityMainBinding
+import ru.perelyginva.myproject.presentation.tabs.Account
+import ru.perelyginva.myproject.presentation.tabs.Cart
+import ru.perelyginva.myproject.presentation.tabs.Food
+import ru.perelyginva.myproject.presentation.tabs.Home
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.FoodViewModel
 

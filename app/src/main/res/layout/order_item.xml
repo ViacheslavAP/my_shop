@@ -38,23 +38,12 @@
             tools:text="89146831233" />
 
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/deleteCheckout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="4dp"
-            android:minHeight="48dp"
-            android:src="@drawable/ic_delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/totalCheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="14dp"
             android:layout_marginBottom="@dimen/margin_5"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -91,9 +80,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20"
             android:text="descriptions"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/phoneUserCheckOut"
-            app:layout_constraintStart_toStartOf="@+id/phoneUserCheckOut"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneUserCheckOut" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

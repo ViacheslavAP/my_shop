@@ -1,4 +1,4 @@
-package ru.perelyginva.myproject.presentation
+package ru.perelyginva.myproject.presentation.tabs
 
 import  android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.perelyginva.myproject.R
-import ru.perelyginva.myproject.data.models.CartModel
 import ru.perelyginva.myproject.databinding.FragmentCheckoutBinding
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
@@ -57,7 +56,7 @@ class Checkout : BottomSheetDialogFragment() {
                 dismiss()
 //проблема тут?
                 (context as FragmentActivity)
-                    .supportFragmentManager.beginTransaction()
+                childFragmentManager.beginTransaction()
                     .replace(R.id.account, Account()).commit()
                 //очитаем базу данных корзины после того как сформировали заказ
                 cartViewModel.clearCart()

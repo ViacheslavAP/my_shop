@@ -9,6 +9,8 @@ import ru.perelyginva.myproject.domain.useCase.OrderLocalUseCase
 
 class OrderLocalViewModel(private val orderLocalUseCase: OrderLocalUseCase) : ViewModel() {
 
+    val loadOrder = orderLocalUseCase.loadOrder()
+
     fun startInsert(
         nameUser: String,
         phoneUser: String,
@@ -22,7 +24,5 @@ class OrderLocalViewModel(private val orderLocalUseCase: OrderLocalUseCase) : Vi
 
         orderLocalUseCase.insert(orderLocalModel)
     }
-
-    val loadOrder = orderLocalUseCase.loadOrder()
 
 }

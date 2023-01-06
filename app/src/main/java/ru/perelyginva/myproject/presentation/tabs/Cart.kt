@@ -1,4 +1,4 @@
-package ru.perelyginva.myproject.presentation
+package ru.perelyginva.myproject.presentation.tabs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -83,7 +83,7 @@ class Cart : Fragment(), View.OnClickListener {
 
         count--
 
-        if (count <= 1) {
+        if (count < 1) {
             cartViewModel.updateProductFromCart(CartModel(
                 cartModel.id,
                 cartModel.name,

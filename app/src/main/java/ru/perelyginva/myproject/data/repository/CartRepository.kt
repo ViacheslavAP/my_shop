@@ -8,26 +8,27 @@ import ru.perelyginva.myproject.data.localDB.CartDao
 import ru.perelyginva.myproject.data.models.CartModel
 import ru.perelyginva.myproject.domain.repository.CartCall
 
-class CartRepository(private val dao: CartDao): CartCall {
+class CartRepository(private val dao: CartDao) : CartCall {
 
-    override suspend fun insert(cartModel: CartModel){
-         dao.insert(cartModel)
+    override suspend fun insert(cartModel: CartModel) {
+        dao.insert(cartModel)
     }
 
-    override fun loadFoodFromCart(): LiveData<List<CartModel>>{
+    override fun loadFoodFromCart(): LiveData<List<CartModel>> {
         return dao.loadFoodFromCart()
     }
 
-    override fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>>{
+    override fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>> {
         return dao.loadFoodToCartFromCartProduct(idProduct)
     }
-//обновление позиции товара
-    override suspend  fun updateProductFromCart(cartModel: CartModel){
+
+    //обновление позиции товара
+    override suspend fun updateProductFromCart(cartModel: CartModel) {
 
         dao.updateProductFromCart(cartModel)
     }
 
-    override suspend fun deleteProductFromCart(idProduct: Int){
+    override suspend fun deleteProductFromCart(idProduct: Int) {
 
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -35,15 +36,15 @@ class CartRepository(private val dao: CartDao): CartCall {
         }
     }
 
-  override suspend fun deleteProductToCartFromCardProduct(idProduct: String){
+    override suspend fun deleteProductToCartFromCardProduct(idProduct: String) {
 
-      CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
 
-          dao.deleteProductToCartFromCardProduct(idProduct)
-      }
-  }
+            dao.deleteProductToCartFromCardProduct(idProduct)
+        }
+    }
 
-    override suspend fun clear(){
-         dao.clear()
+    override suspend fun clear() {
+        dao.clear()
     }
 }
