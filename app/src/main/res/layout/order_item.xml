@@ -81,6 +81,8 @@
             android:layout_marginTop="@dimen/margin_20"
             android:text="descriptions"
             android:textAlignment="textStart"
+            android:singleLine="false"
+            android:lines="3"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

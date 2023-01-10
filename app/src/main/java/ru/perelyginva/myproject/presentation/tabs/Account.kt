@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.perelyginva.myproject.data.models.CartModel
 import ru.perelyginva.myproject.databinding.FragmentAccountBinding
-import ru.perelyginva.myproject.presentation.adapter.CartAdapter
 import ru.perelyginva.myproject.presentation.adapter.OrderAdapter
 import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
 

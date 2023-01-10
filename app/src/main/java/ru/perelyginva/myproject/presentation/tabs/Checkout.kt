@@ -36,7 +36,7 @@ class Checkout : BottomSheetDialogFragment() {
 
                 val descriptionOrder = it.map {
                     it.name + ": count - " + it.count + ": price - " + it.totalPrice + ": $;"
-                }.joinToString()
+                }.joinToString("")
 
                 orderLocalViewModel.startInsert(
                     binding?.enterNameCheckout?.text.toString(),
@@ -45,19 +45,24 @@ class Checkout : BottomSheetDialogFragment() {
                     totalOrder.toString()
                 )
 
+                val descriptionOrderAccount = it.map {
+                    it.name + " - " + it.count + " - " + it.totalPrice
+                }.joinToString()
+
                 ordersApiViewModel.insert(
                     binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(),
-                    descriptionOrder,
+                    descriptionOrderAccount,
                     totalOrder.toString())
 
                 binding?.enterNameCheckout?.setText("")
                 binding?.enterPhoneCheckout?.setText("")
+
                 dismiss()
 //проблема тут?
-                (context as FragmentActivity)
-                childFragmentManager.beginTransaction()
-                    .replace(R.id.account, Account()).commit()
+//                (context as FragmentActivity)
+//                childFragmentManager.beginTransaction()
+//                    .replace(R.id.account, Account()).commit()
                 //очитаем базу данных корзины после того как сформировали заказ
                 cartViewModel.clearCart()
             })

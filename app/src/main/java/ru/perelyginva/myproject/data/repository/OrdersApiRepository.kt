@@ -24,7 +24,6 @@ class OrdersApiRepository : OrdersApiCall {
         callInsertCategory?.enqueue(object: retrofit2.Callback<ResponseBody?> {
 
             override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
-                TODO("Not yet implemented")
             }
 
             override fun onFailure(call: Call<ResponseBody?>, t: Throwable) {
