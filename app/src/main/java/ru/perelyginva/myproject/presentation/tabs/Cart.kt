@@ -35,11 +35,22 @@ class Cart : Fragment(), View.OnClickListener {
         binding?.checkoutCart?.setOnClickListener(this)
         return binding?.root
     }
+//TODO("скрыть кнопку удаления всех товаров пока нет ни одного товара")
+    private fun hideButton(){
+
+        if (binding?.listCart !== null){
+
+
+        }
+
+
+    }
     
     private fun initRecyclerCart() {
 
         binding?.listCart?.layoutManager = LinearLayoutManager(context)
-        cartAdapter = CartAdapter({ cartModel: CartModel -> deleteFromCart(cartModel) },
+        cartAdapter = CartAdapter(
+            { cartModel: CartModel -> deleteFromCart(cartModel) },
             { cartModel: CartModel -> lessCount(cartModel) },
             { cartModel: CartModel -> moreCount(cartModel) }
         )
@@ -73,6 +84,8 @@ class Cart : Fragment(), View.OnClickListener {
                 val checkout = Checkout()
 
                 checkout.show((context as FragmentActivity).supportFragmentManager, "checkout")
+
+
             }
         }
     }
@@ -86,8 +99,8 @@ class Cart : Fragment(), View.OnClickListener {
         if (count < 1) {
             cartViewModel.updateProductFromCart(CartModel(
                 cartModel.id,
-                cartModel.name,
                 cartModel.image,
+                cartModel.name,
                 cartModel.price,
                 cartModel.idProduct,
                 "1",
@@ -95,8 +108,8 @@ class Cart : Fragment(), View.OnClickListener {
         } else {
             cartViewModel.updateProductFromCart(CartModel(
                 cartModel.id,
-                cartModel.name,
                 cartModel.image,
+                cartModel.name,
                 cartModel.price,
                 cartModel.idProduct,
                 count.toString(),
@@ -112,8 +125,8 @@ class Cart : Fragment(), View.OnClickListener {
 
         cartViewModel.updateProductFromCart(CartModel(
             cartModel.id,
-            cartModel.name,
             cartModel.image,
+            cartModel.name,
             cartModel.price,
             cartModel.idProduct,
             count.toString(),

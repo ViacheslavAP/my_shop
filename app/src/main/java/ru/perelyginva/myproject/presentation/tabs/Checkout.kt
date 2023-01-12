@@ -1,14 +1,14 @@
 package ru.perelyginva.myproject.presentation.tabs
 
 import  android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
+import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.databinding.FragmentCheckoutBinding
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel

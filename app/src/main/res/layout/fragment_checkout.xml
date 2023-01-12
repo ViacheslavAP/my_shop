@@ -1,83 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintCheck"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:background="@color/space_cream"
     tools:context=".presentation.tabs.Checkout">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutEnterNameCheckout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_10"
+        android:hint="@string/your_name"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="@android:color/holo_red_dark"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconTint="@color/white">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/LayoutEnterNameCheckout"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterNameCheckout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_10"
-            android:hint="@string/your_name"
-            app:boxStrokeWidthFocused="0dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="@android:color/holo_red_dark"
-            app:hintTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:startIconTint="@color/white">
+            android:background="@drawable/rectangle_rounded_some"
+            android:inputType="text"
+            android:textColor="@color/black" />
 
-              <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/enterNameCheckout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_rounded_some"
-                android:inputType="text"
-                android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutEnterPhoneCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:hint="@string/your_phone"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="@android:color/holo_red_dark"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/LayoutEnterNameCheckout"
+        app:layout_constraintStart_toStartOf="@id/LayoutEnterNameCheckout"
+        app:layout_constraintTop_toBottomOf="@id/LayoutEnterNameCheckout"
+        app:startIconTint="@color/white">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/LayoutEnterPhoneCheckout"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterPhoneCheckout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_10"
-            android:layout_marginTop="@dimen/margin_5"
-            android:layout_marginEnd="@dimen/margin_10"
-            android:hint="@string/your_phone"
-            app:boxStrokeWidthFocused="0dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="@android:color/holo_red_dark"
-            app:hintTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@id/LayoutEnterNameCheckout"
-            app:layout_constraintStart_toStartOf="@id/LayoutEnterNameCheckout"
-            app:layout_constraintTop_toBottomOf="@id/LayoutEnterNameCheckout"
-            app:startIconTint="@color/white">
+            android:background="@drawable/rectangle_rounded_some_down"
+            android:inputType="phone"
+            android:textColor="@color/black" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/enterPhoneCheckout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_rounded_some_down"
-                android:inputType="phone"
-                android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/submitCheckOut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_20"
-            android:background="@drawable/rectangle_rounded_all"
-            android:text="@string/submit"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="@id/LayoutEnterPhoneCheckout"
-            app:layout_constraintStart_toStartOf="@id/LayoutEnterPhoneCheckout"
-            app:layout_constraintTop_toBottomOf="@id/LayoutEnterPhoneCheckout"
-
-            />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitCheckOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/rectangle_rounded_all"
+        android:text="@string/submit"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/LayoutEnterPhoneCheckout"
+        app:layout_constraintStart_toStartOf="@id/LayoutEnterPhoneCheckout"
+        app:layout_constraintTop_toBottomOf="@id/LayoutEnterPhoneCheckout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
