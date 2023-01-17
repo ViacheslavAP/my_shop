@@ -36,15 +36,7 @@ class Cart : Fragment(), View.OnClickListener {
         return binding?.root
     }
 //TODO("скрыть кнопку удаления всех товаров пока нет ни одного товара")
-    private fun hideButton(){
 
-        if (binding?.listCart !== null){
-
-
-        }
-
-
-    }
     
     private fun initRecyclerCart() {
 

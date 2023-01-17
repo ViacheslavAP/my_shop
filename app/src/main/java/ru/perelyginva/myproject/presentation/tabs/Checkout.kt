@@ -59,11 +59,7 @@ class Checkout : BottomSheetDialogFragment() {
                 binding?.enterPhoneCheckout?.setText("")
 
                 dismiss()
-//проблема тут?
-//                (context as FragmentActivity)
-//                childFragmentManager.beginTransaction()
-//                    .replace(R.id.account, Account()).commit()
-                //очитаем базу данных корзины после того как сформировали заказ
+
                 cartViewModel.clearCart()
             })
 
