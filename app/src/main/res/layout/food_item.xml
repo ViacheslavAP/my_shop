@@ -13,7 +13,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageFood"
@@ -38,10 +38,14 @@
             android:id="@+id/priceCoffee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:layout_marginStart="@dimen/margin_10"
             android:textColor="@color/black"
-            tools:text="1000"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/imageFood"
-            app:layout_constraintTop_toBottomOf="@id/descriptionFood" />
+            app:layout_constraintTop_toBottomOf="@id/descriptionFood"
+            tools:text="1000" />
 
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -56,8 +60,8 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/descriptionFood"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="234dp"
+            android:layout_height="68dp"
             android:layout_margin="10dp"
             android:text="@string/descriptions"
             android:textColor="@color/black"
@@ -69,22 +73,22 @@
             android:id="@+id/addToCart"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:background="@color/color_card"
             android:minHeight="48dp"
             android:src="@drawable/ic_basket"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/color_card"
             tools:ignore="DuplicateClickableBoundsCheck,SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/remove_from_cart"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:background="@color/color_card"
             android:minHeight="48dp"
             android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@color/color_card"
             tools:ignore="SpeakableTextPresentCheck" />
 
 

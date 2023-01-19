@@ -13,29 +13,31 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="123dp">
+
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageProductCart"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="@dimen/margin_5"
+            android:layout_marginStart="4dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.478"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/nameProductCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_5"
-            android:layout_marginEnd="128dp"
+            android:autoText="false"
+            android:ellipsize="start"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="gshgoshgshgoshgsgwj" />
 
@@ -43,7 +45,7 @@
             android:id="@+id/priceProductCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="8dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageProductCart"
@@ -54,7 +56,7 @@
             android:id="@+id/imRubleProductCart"
             android:layout_width="24dp"
             android:layout_height="19dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginLeft="8dp"
             android:src="@drawable/ic_ruble"
             app:layout_constraintBottom_toBottomOf="@+id/priceProductCart"
             app:layout_constraintLeft_toRightOf="@id/priceProductCart"
@@ -63,8 +65,9 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/removeFromCartProductCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/color_card"
             android:minHeight="48dp"
             android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -75,36 +78,40 @@
             android:id="@+id/lessProductBasket"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginTop="@dimen/margin_5"
-            android:layout_marginEnd="@dimen/margin_5"
+            android:layout_marginStart="64dp"
             android:background="@drawable/shape_oval"
             android:elevation="10dp"
             android:src="@drawable/ic_less"
-            app:layout_constraintEnd_toEndOf="@id/priceProductCart"
-            app:layout_constraintStart_toStartOf="@id/priceProductCart"
-            app:layout_constraintTop_toBottomOf="@id/priceProductCart"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageProductCart"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.081"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/countProductCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:text="@string/_1"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/countProductText"
             app:layout_constraintStart_toEndOf="@id/countProductText"
-            app:layout_constraintTop_toBottomOf="@id/lessProductBasket" />
+            app:layout_constraintTop_toBottomOf="@id/lessProductBasket"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/countProductText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/total"
             android:textColor="@color/black"
-            android:layout_marginTop="@dimen/margin_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/moreProductBasket"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/lessProductBasket" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -118,6 +125,17 @@
             app:layout_constraintStart_toEndOf="@id/lessProductBasket"
             app:layout_constraintTop_toTopOf="@id/lessProductBasket"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="402dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="61dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

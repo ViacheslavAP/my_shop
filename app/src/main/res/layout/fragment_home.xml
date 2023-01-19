@@ -20,11 +20,12 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:textColor="@android:color/holo_orange_dark"
-            android:text="@string/mainHeader"/>
+            android:textColor="@color/brown_beige"
+            android:text="@string/mainHeader"
+            android:textSize="24sp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/descriptionCoso"
+            android:id="@+id/descriptionKolosok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/mainHeader"
@@ -33,9 +34,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textColor="@color/brown_beige"
             android:gravity="center_horizontal"
-            android:text="@string/descriptionCoso"/>
+            android:text="@string/description_kolosok"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/slider"
