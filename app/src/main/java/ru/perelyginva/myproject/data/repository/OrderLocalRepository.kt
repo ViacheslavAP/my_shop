@@ -16,4 +16,9 @@ class OrderLocalRepository(private val orderLocalDao: OrderLocalDao) : OrderLoca
     override fun loadOrder(): LiveData<List<OrderLocalModel>>{
        return orderLocalDao.loadOrder()
     }
+
+
+    override suspend fun deleteAllOrders() {
+        orderLocalDao.deleteAll()
+    }
 }

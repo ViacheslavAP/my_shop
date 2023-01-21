@@ -20,5 +20,6 @@
     <string name="salePropTwo">Sale - 15 % </string>
     <string name="mainHeader">Bakery</string>
     <string name="description_kolosok">Kolosok</string>
+    <string name="helper_text_phone">enter</string>
 
 </resources>

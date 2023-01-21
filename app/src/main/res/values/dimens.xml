@@ -5,5 +5,7 @@
     <dimen name="margin_20">20dp</dimen>
     <dimen name="cardCornerRadius">10dp</dimen>
     <dimen name="strokeWidth">4dp</dimen>
+    <dimen name="icon_little_card_width">48dp</dimen>
+    <dimen name="icon_little_card_height">48dp</dimen>
 
 </resources>

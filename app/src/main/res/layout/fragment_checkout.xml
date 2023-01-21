@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintCheck"
@@ -19,11 +18,12 @@
         android:hint="@string/your_name"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
-        app:endIconTint="@android:color/holo_red_dark"
+        app:endIconTint="@color/color_card"
         app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_person"
         app:startIconTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -46,11 +46,18 @@
         android:hint="@string/your_phone"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
-        app:endIconTint="@android:color/holo_red_dark"
+        app:endIconTint="@color/color_card"
+        app:counterEnabled="true "
+        app:counterMaxLength="10"
+        app:helperText="@string/helper_text_phone"
+        app:helperTextTextColor="@android:color/holo_red_light"
         app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/LayoutEnterNameCheckout"
         app:layout_constraintStart_toStartOf="@id/LayoutEnterNameCheckout"
         app:layout_constraintTop_toBottomOf="@id/LayoutEnterNameCheckout"
+        app:prefixText="+7"
+        app:prefixTextColor="@color/white"
+        app:startIconDrawable="@drawable/ic_phone"
         app:startIconTint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -59,6 +66,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rectangle_rounded_some_down"
             android:inputType="phone"
+            android:maxLength="10"
             android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>

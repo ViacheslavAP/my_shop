@@ -16,4 +16,5 @@ class OrdersApiViewModel(private val ordersApiUseCase: OrdersApiUseCase): ViewMo
 
         ordersApiUseCase.insert(name, phone, descriptions, priceOrder)
     }
+
 }

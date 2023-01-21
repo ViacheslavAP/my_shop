@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.perelyginva.myproject.data.models.OrderLocalModel
 import ru.perelyginva.myproject.databinding.OrderItemBinding
 
-class OrderAdapter() :
+class  OrderAdapter() :
     RecyclerView.Adapter<OrderAdapter.CheckoutHolder>() {
 
     private val orders = ArrayList<OrderLocalModel>()

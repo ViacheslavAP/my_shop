@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardProposalOne"
             android:layout_width="336dp"
@@ -34,7 +32,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_margin="10dp"
                     android:text="@string/salePropOne"
-                    android:textColor="@android:color/holo_red_dark"/>
+                    android:textColor="@color/white"/>
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/propOneHeader"
@@ -44,7 +42,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_margin="10dp"
-                    android:text="@string/headerPropOne"
+                    android:text="@string/header_evening_action"
                     android:textColor="@android:color/holo_orange_dark"/>
 
                 <androidx.appcompat.widget.AppCompatTextView

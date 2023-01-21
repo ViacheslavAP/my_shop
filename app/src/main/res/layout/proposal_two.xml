@@ -31,7 +31,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_margin="10dp"
                 android:text="@string/salePropTwo"
-                android:textColor="@android:color/holo_red_dark"/>
+                android:textColor="@color/white"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/propTwoHeader"
@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_margin="10dp"
-                android:text="@string/headerPropTwo"
+                android:text="@string/header_morning_action"
                 android:textColor="@android:color/holo_orange_dark"/>
 
             <androidx.appcompat.widget.AppCompatTextView

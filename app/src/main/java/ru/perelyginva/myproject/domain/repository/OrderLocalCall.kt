@@ -8,4 +8,6 @@ interface OrderLocalCall {
     suspend fun insert(orderLocalModel: OrderLocalModel)
 
     fun loadOrder(): LiveData<List<OrderLocalModel>>
+
+   suspend fun deleteAllOrders()
 }

@@ -22,4 +22,5 @@
     <string name="salePropTwo">Скидка - 15 % </string>
     <string name="mainHeader">Пекарня</string>
     <string name="description_kolosok">Колосок</string>
+    <string name="helper_text_phone">требуется ввести*</string>
 </resources>

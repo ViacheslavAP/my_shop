@@ -16,4 +16,8 @@ interface OrderLocalDao {
    @Query("SELECT * FROM order_local_data_table")
    fun loadOrder(): LiveData<List<OrderLocalModel>>
 
+   @Query("DELETE FROM order_local_data_table")
+
+   suspend fun deleteAll()
+
 }

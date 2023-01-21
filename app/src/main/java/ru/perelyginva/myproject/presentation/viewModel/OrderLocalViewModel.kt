@@ -25,4 +25,8 @@ class OrderLocalViewModel(private val orderLocalUseCase: OrderLocalUseCase) : Vi
         orderLocalUseCase.insert(orderLocalModel)
     }
 
+    fun deleteAllOrders() = viewModelScope.launch {
+        orderLocalUseCase.deleteAllOrders()
+    }
+
 }

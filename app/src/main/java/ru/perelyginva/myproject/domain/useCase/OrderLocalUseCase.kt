@@ -17,4 +17,9 @@ class OrderLocalUseCase(private val orderLocalCall: OrderLocalCall) {
        return orderLocalCall.loadOrder()
     }
 
+  suspend  fun deleteAllOrders() {
+      orderLocalCall.deleteAllOrders()
+    }
+
+
 }

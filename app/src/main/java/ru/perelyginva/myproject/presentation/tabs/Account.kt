@@ -17,7 +17,7 @@ class Account : Fragment() {
 
     private var binding: FragmentAccountBinding? = null
     private var orderAdapter: OrderAdapter? = null
-    private val orderLocalViewModelModel: OrderLocalViewModel by viewModel()
+    private val orderLocalViewModel: OrderLocalViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +28,9 @@ class Account : Fragment() {
         initRecyclerOrder()
         loadOrders()
 
+        binding?.clearOrderInAccount?.setOnClickListener(View.OnClickListener {
+            deleteAllOrders()
+        })
         return binding?.root
 
     }
@@ -42,10 +45,15 @@ class Account : Fragment() {
 
     private fun loadOrders() {
 
-        orderLocalViewModelModel.loadOrder.observe(viewLifecycleOwner, Observer {
+        orderLocalViewModel.loadOrder.observe(viewLifecycleOwner, Observer {
             orderAdapter?.setList(it)
             orderAdapter?.notifyDataSetChanged()
 
         })
+    }
+
+    private fun deleteAllOrders() {
+
+        orderLocalViewModel.deleteAllOrders()
     }
 }

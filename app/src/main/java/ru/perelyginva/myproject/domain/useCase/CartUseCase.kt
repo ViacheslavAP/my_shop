@@ -41,6 +41,6 @@ class CartUseCase(private val cartCall: CartCall) {
 
      suspend fun clear(){
 
-        cartCall .clear()
+        cartCall.clear()
     }
 }
