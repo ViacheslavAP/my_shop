@@ -19,8 +19,15 @@ class CartViewModel(private val cartUseCase: CartUseCase) : ViewModel() {
         priceFood: String,
         idProduct: String,
         countFood: String,
+
     ) {
-        insert(CartModel(0, imageFood, nameFood, priceFood, idProduct, countFood))
+        insert(CartModel(0,
+            imageFood,
+            nameFood,
+            priceFood,
+            idProduct,
+            countFood,
+            (priceFood.toInt()* countFood.toInt()).toString()))
     }
 
     private fun insert(cartModel: CartModel) = viewModelScope.launch {
@@ -31,6 +38,11 @@ class CartViewModel(private val cartUseCase: CartUseCase) : ViewModel() {
     fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>> {
 
         return cartUseCase.loadFoodToCartFromCartProduct(idProduct)
+    }
+
+    fun updateProductFromCart(cartModel: CartModel) = viewModelScope.launch {
+
+        cartUseCase.updateProductFromCart(cartModel)
     }
 
     //удаляет товар из корзины

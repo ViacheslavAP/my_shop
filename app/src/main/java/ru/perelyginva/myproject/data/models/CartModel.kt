@@ -26,4 +26,7 @@ data class CartModel (
 
     @ColumnInfo(name = "cart_count")
     var count: String,
+
+    @ColumnInfo(name = "cart_totalPrice")
+    var totalPrice: String,
 )

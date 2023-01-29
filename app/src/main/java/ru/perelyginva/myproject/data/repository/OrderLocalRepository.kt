@@ -1,24 +1,24 @@
 package ru.perelyginva.myproject.data.repository
 
-import android.content.Context
+
 import androidx.lifecycle.LiveData
-import ru.perelyginva.myproject.data.dataSource.FoodApiDataSource
-import ru.perelyginva.myproject.data.dataSource.FoodDataSource
-import ru.perelyginva.myproject.data.models.FoodModel
-import ru.perelyginva.myproject.domain.repository.FoodCall
+import ru.perelyginva.myproject.data.localDB.OrderLocalDao
+import ru.perelyginva.myproject.data.models.OrderLocalModel
+import ru.perelyginva.myproject.domain.repository.OrderLocalCall
 
-class OrderLocalRepository (
-    private val foodApiDataSource: FoodApiDataSource
-) : FoodCall {
 
-    override fun loadFood(): LiveData<List<FoodModel>> {
+class OrderLocalRepository(private val orderLocalDao: OrderLocalDao) : OrderLocalCall {
 
-        return foodDataSource.loadFood()
+    override suspend fun insert(orderLocalModel: OrderLocalModel) {
+        orderLocalDao.insert(orderLocalModel)
     }
 
-    override suspend fun startMigration(context: Context){
+    override fun loadOrder(): LiveData<List<OrderLocalModel>>{
+       return orderLocalDao.loadOrder()
+    }
 
-        foodDataSource.clear()
-        foodApiDataSource.startMigration(context)
+
+    override suspend fun deleteAllOrders() {
+        orderLocalDao.deleteAll()
     }
 }

@@ -11,6 +11,8 @@ interface CartCall {
 
     fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>>
 
+    suspend  fun updateProductFromCart(cartModel: CartModel)
+
     suspend fun deleteProductFromCart(idProduct: Int)
 
     suspend fun deleteProductToCartFromCardProduct(idProduct: String)

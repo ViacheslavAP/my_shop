@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Колосок</string>
+    <string name="home">Домой</string>
+    <string name="food">Выпечка</string>
+    <string name="cart">Корзина</string>
+    <string name="account">Заказы</string>
+    <string name="rubles">Рублей</string>
+    <string name="descriptions">Вкусная, жаренная сосика в тесте.\nСосиска из натурального мяса.\n Состав: Мука высший сорт, яйцо куринное,\n без гмо.</string>
+    <string name="_1">1</string>
+    <string name="delete">Удалить</string>
+    <string name="check_out">Оформить заказ</string>
+    <string name="total">Итого</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="your_phone">Ваш номер</string>
+    <string name="submit">Отправить</string>
+    <string name="header_morning_action">Утренняя скидка</string>
+    <string name="header_evening_action">Вечерняя скидка</string>
+    <string name="descriptionProposal">Акция действует при заказе с 8.00 до 10.00 </string>
+    <string name="salePropOne">Скидка - 10 % </string>
+    <string name="salePropTwo">Скидка - 15 % </string>
+    <string name="mainHeader">Пекарня</string>
+    <string name="description_kolosok">Колосок</string>
+    <string name="helper_text_phone">требуется ввести*</string>
+    <string name="number_1">1</string>
+</resources>

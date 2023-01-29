@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Колосок</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="food">Food</string>
     <string name="cart">Cart</string>
@@ -11,5 +9,18 @@
     <string name="_1">1</string>
     <string name="delete">Delete</string>
     <string name="check_out">Check Out</string>
+    <string name="total">Итого</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_phone">Your Phone</string>
+    <string name="submit">Submit</string>
+    <string name="header_morning_action">Morning moccaccino</string>
+    <string name="header_evening_action">Morning cappuccino</string>
+    <string name="descriptionProposal">The promotion is valid when ordering from 8 to 10 am</string>
+    <string name="salePropOne">Sale - 10 % </string>
+    <string name="salePropTwo">Sale - 15 % </string>
+    <string name="mainHeader">Bakery</string>
+    <string name="description_kolosok">Kolosok</string>
+    <string name="helper_text_phone">enter</string>
+    <string name="number_1">1</string>
 
 </resources>

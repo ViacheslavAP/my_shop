@@ -2,12 +2,14 @@ package ru.perelyginva.myproject.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.databinding.ActivityMainBinding
+import ru.perelyginva.myproject.presentation.tabs.Account
+import ru.perelyginva.myproject.presentation.tabs.Cart
+import ru.perelyginva.myproject.presentation.tabs.Food
+import ru.perelyginva.myproject.presentation.tabs.Home
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.FoodViewModel
 
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.account_menu -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.content, Accaunt()).commit()
+                        .replace(R.id.content, Account()).commit()
                 }
 
             }
