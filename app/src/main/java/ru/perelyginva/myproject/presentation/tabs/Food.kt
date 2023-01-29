@@ -33,6 +33,7 @@ class Food : Fragment() {
         initRecyclerFood()
         loafFood()
 
+
         return binding?.root
     }
 
@@ -101,4 +102,5 @@ class Food : Fragment() {
                 }
             })
     }
+
 }

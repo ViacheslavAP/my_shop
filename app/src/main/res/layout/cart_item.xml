@@ -19,7 +19,7 @@
             android:id="@+id/imageProductCart"
             android:layout_width="148dp"
             android:layout_height="153dp"
-            android:layout_marginStart="8dp"
+            android:layout_margin="8dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,11 +55,11 @@
             android:id="@+id/imRubleProductCart"
             android:layout_width="24dp"
             android:layout_height="19dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="4dp"
             android:src="@drawable/ic_ruble"
-            app:layout_constraintBottom_toBottomOf="@+id/priceProductCart"
-            app:layout_constraintLeft_toRightOf="@id/priceProductCart"
-            app:layout_constraintTop_toTopOf="@+id/priceProductCart"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -72,57 +72,63 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/lessProductBasket"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="64dp"
-            android:background="@drawable/shape_oval"
-            android:elevation="10dp"
-            android:src="@drawable/ic_less"
-
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_rounded_12"
+            android:backgroundTint="@color/brown_beige"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageProductCart"
-            app:layout_constraintTop_toTopOf="@+id/guideline2"
-            app:layout_constraintVertical_bias="0.506"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.688"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.724">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/countProductCart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:text="@string/_1"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/countProductText"
-            app:layout_constraintStart_toEndOf="@id/countProductText"
-            app:layout_constraintTop_toBottomOf="@id/lessProductBasket"
-            app:layout_constraintVertical_bias="1.0" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/lessProductBasket"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="4dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/countProductCart"
+                app:layout_constraintEnd_toStartOf="@id/countProductCart"
+                app:layout_constraintTop_toTopOf="@id/countProductCart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerRound"
+                app:srcCompat="@drawable/ic_remove_24"
+                app:tint="@color/space_cream" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/countProductText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/total"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/moreProductBasket"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/lessProductBasket" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/countProductCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/number_1" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/moreProductBasket"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="@dimen/margin_10"
-            android:background="@drawable/shape_oval"
-            android:elevation="10dp"
-            android:src="@drawable/ic_more"
-            app:layout_constraintStart_toEndOf="@id/lessProductBasket"
-            app:layout_constraintTop_toTopOf="@id/lessProductBasket"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/moreProductBasket"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="4dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/countProductCart"
+                app:layout_constraintStart_toEndOf="@id/countProductCart"
+                app:layout_constraintTop_toTopOf="@id/countProductCart"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerRound"
+                app:srcCompat="@drawable/ic_add_24"
+                app:tint="@color/space_cream" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -134,6 +140,7 @@
             app:layout_constraintGuide_begin="61dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

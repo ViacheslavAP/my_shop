@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageButton
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.perelyginva.myproject.data.models.FoodModel
@@ -69,6 +70,14 @@ class FoodAdapter(
             binding.removeFromCart .setOnClickListener(View.OnClickListener {
                 removeFromCart (foodModel)
             })
+
+           binding.cardFood.setOnClickListener {
+               binding.descriptionFood.apply {
+                   isVisible = !isVisible
+               }
+
+           }
+
 
             loadFoodToCartFromCartProduct(foodModel.id, binding.addToCart, binding.removeFromCart)
         }

@@ -21,5 +21,6 @@
     <string name="mainHeader">Bakery</string>
     <string name="description_kolosok">Kolosok</string>
     <string name="helper_text_phone">enter</string>
+    <string name="number_1">1</string>
 
 </resources>

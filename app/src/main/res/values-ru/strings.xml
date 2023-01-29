@@ -23,4 +23,5 @@
     <string name="mainHeader">Пекарня</string>
     <string name="description_kolosok">Колосок</string>
     <string name="helper_text_phone">требуется ввести*</string>
+    <string name="number_1">1</string>
 </resources>
