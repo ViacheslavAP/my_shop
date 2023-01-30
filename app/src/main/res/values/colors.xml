@@ -4,14 +4,9 @@
     <color name="green_600">#76d275</color>
     <color name="space_cream">#FFF5E6</color>
     <color name="brown_beige">#947333</color>
+    <color name="brown_beige_2">#D1652A09</color>
+    <color name="brown_beige_3">#D158331E</color>
     <color name="color_card">#F7DEAE</color>
-
-    <color name="purple_200">#b98eb1</color>
-    <color name="purple_300">#a16296</color>
-    <color name="purple_400">#934086</color>
-    <color name="purple_500">#831f76</color>
-    <color name="purple_600">#781b71</color>
-    <color name="purple_700">#69146a</color>
 
     <color name="teal_200">#98e1ab</color>
     <color name="teal_400">#3acc6d</color>

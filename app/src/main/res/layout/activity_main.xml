@@ -23,7 +23,7 @@
         android:id="@+id/bottomMainMenu"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/brown_beige"
+        android:background="@color/brown_beige_2"
         android:elevation="8dp"
         app:itemIconTint="@color/tab_color"
         app:itemTextColor="@color/tab_color"

@@ -47,7 +47,7 @@
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="clear_text"
         app:endIconTint="@color/color_card"
-        app:counterEnabled="true "
+        app:counterEnabled="true"
         app:counterMaxLength="10"
         app:helperText="@string/helper_text_phone"
         app:helperTextTextColor="@android:color/holo_red_light"
