@@ -20,7 +20,10 @@
     <string name="salePropTwo">Sale - 15 % </string>
     <string name="mainHeader">Bakery</string>
     <string name="description_kolosok">Kolosok</string>
-    <string name="helper_text_phone">enter</string>
+    <string name="helper_text_phone">enter your phone*</string>
     <string name="number_1">1</string>
+    <string name="helper_text_name">enter name*</string>
+    <string name="helper_text_phone_required">required phone number</string>
+    <string name="required">required</string>
 
 </resources>

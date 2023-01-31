@@ -24,4 +24,7 @@
     <string name="description_kolosok">Колосок</string>
     <string name="helper_text_phone">требуется ввести*</string>
     <string name="number_1">1</string>
+    <string name="helper_text_name">введите имя*</string>
+    <string name="helper_text_phone_required">введен не корректный номер</string>
+    <string name="required">требуется</string>
 </resources>

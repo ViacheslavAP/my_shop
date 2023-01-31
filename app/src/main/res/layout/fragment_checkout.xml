@@ -11,7 +11,7 @@
     tools:context=".presentation.tabs.Checkout">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/LayoutEnterNameCheckout"
+        android:id="@+id/layoutEnterNameCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_10"
@@ -20,6 +20,8 @@
         app:endIconMode="clear_text"
         app:endIconTint="@color/color_card"
         app:hintTextColor="@color/white"
+        app:helperText="@string/helper_text_name"
+        app:helperTextTextColor="@android:color/holo_red_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,7 +39,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/LayoutEnterPhoneCheckout"
+        android:id="@+id/layoutEnterPhoneCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_10"
@@ -52,9 +54,9 @@
         app:helperText="@string/helper_text_phone"
         app:helperTextTextColor="@android:color/holo_red_light"
         app:hintTextColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@id/LayoutEnterNameCheckout"
-        app:layout_constraintStart_toStartOf="@id/LayoutEnterNameCheckout"
-        app:layout_constraintTop_toBottomOf="@id/LayoutEnterNameCheckout"
+        app:layout_constraintEnd_toEndOf="@id/layoutEnterNameCheckout"
+        app:layout_constraintStart_toStartOf="@id/layoutEnterNameCheckout"
+        app:layout_constraintTop_toBottomOf="@id/layoutEnterNameCheckout"
         app:prefixText="+7"
         app:prefixTextColor="@color/white"
         app:startIconDrawable="@drawable/ic_phone"
@@ -66,6 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rectangle_rounded_some_down"
             android:inputType="phone"
+            android:lines="1"
             android:maxLength="10"
             android:textColor="@color/white" />
 
@@ -79,7 +82,7 @@
         android:background="@drawable/rectangle_rounded_all"
         android:text="@string/submit"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@id/LayoutEnterPhoneCheckout"
-        app:layout_constraintStart_toStartOf="@id/LayoutEnterPhoneCheckout"
-        app:layout_constraintTop_toBottomOf="@id/LayoutEnterPhoneCheckout" />
+        app:layout_constraintEnd_toEndOf="@id/layoutEnterPhoneCheckout"
+        app:layout_constraintStart_toStartOf="@id/layoutEnterPhoneCheckout"
+        app:layout_constraintTop_toBottomOf="@id/layoutEnterPhoneCheckout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
