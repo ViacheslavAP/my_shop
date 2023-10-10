@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.fragment.app.Fragment
@@ -33,16 +34,33 @@ class Checkout : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentCheckoutBinding.inflate(layoutInflater, container, false)
-//TODO("не корректно работает проверка на не правильный ввод данных")
-        phoneFocusListener()
+
 
 
         binding?.submitCheckOut?.setOnClickListener(View.OnClickListener {
 
+//проверяю ввел пользователь данные или нет! &&
+
+            if (binding?.enterNameCheckout?.text.toString().isEmpty()
+            ) {
+                binding?.layoutEnterNameCheckout?.error = "Введите Имя"
+                return@OnClickListener
+            } else if (binding?.enterPhoneCheckout?.text?.length!! < 10  ) {
+
+                binding?.layoutEnterPhoneCheckout?.error = "Введите номер телефона"
+                return@OnClickListener
+            } else {
+
+                AlertDialog.Builder((context as FragmentActivity))
+                    .setTitle("Заявка оформлена!")
+                    .setPositiveButton("Хорошо") { _, _ -> }
+                    .show()
+
+            }
             cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
 
                 val totalOrder: Int = it.sumOf { it.totalPrice.toInt() }
-
+//TODO("добавить символ рубля")
                 val descriptionOrder = it.map {
                     it.name + ": count - " + it.count + ": price - " + it.totalPrice + ": \nU+20BD\n;"
                 }.joinToString("")
@@ -58,6 +76,14 @@ class Checkout : BottomSheetDialogFragment() {
                     it.name + " - " + it.count + " - " + it.totalPrice
                 }.joinToString()
 
+                //выводим сообщение о том, что карзина пуста
+                if (descriptionOrderAccount.isEmpty()){
+                    binding?.submitCheckOut?.visibility = View.GONE
+                    Toast.makeText(
+                        (context as FragmentActivity),
+                        "Вы ни чего не выбрали!",
+                        Toast.LENGTH_SHORT).show()
+                }
                 ordersApiViewModel.insert(
                     binding?.enterNameCheckout?.text.toString(),
                     binding?.enterPhoneCheckout?.text.toString(),
@@ -73,78 +99,9 @@ class Checkout : BottomSheetDialogFragment() {
                 cartViewModel.clearCart()
             })
 
-            correctDataFormat()
-
         })
-
-
 
         return binding?.root
     }
-
-    private fun correctDataFormat() {
-        val validName = binding?.layoutEnterNameCheckout?.helperText == null
-        val validPhone = binding?.layoutEnterPhoneCheckout?.helperText == null
-
-        if (validName && validPhone) {
-            resetForm()
-        } else
-            invalidForm()
-
-    }
-
-    private fun invalidForm() {
-
-        var message = ""
-        if (binding?.layoutEnterNameCheckout?.helperText == null)
-            message += "\n\nИмя:" + binding?.layoutEnterNameCheckout?.helperText
-
-        if (binding?.layoutEnterPhoneCheckout?.helperText == null)
-            message += "\n\nТелефон:" + binding?.layoutEnterPhoneCheckout?.helperText
-
-        AlertDialog.Builder((context as FragmentActivity))
-            .setTitle("Неправильная форма!")
-            .setMessage(message)
-            .setPositiveButton("Хорошо") { _, _ -> }
-            .show()
-    }
-
-    private fun resetForm() {
-        var message = ""
-        message += "\nИмя: " + binding?.enterNameCheckout?.text
-        message += "\nТелефон: " + binding?.enterPhoneCheckout?.text
-
-        AlertDialog.Builder((context as FragmentActivity))
-            .setTitle("Правильная форма!")
-            .setMessage(message)
-            .setPositiveButton("Хорошо") { _, _ ->
-
-                binding?.enterNameCheckout?.text = null
-                binding?.enterPhoneCheckout?.text = null
-
-                binding?.layoutEnterNameCheckout?.helperText = getText(R.string.required)
-                binding?.layoutEnterPhoneCheckout?.helperText = getText(R.string.required)
-
-            }.show()
-    }
-
-    private fun phoneFocusListener() {
-
-        binding?.enterPhoneCheckout?.setOnFocusChangeListener { _, focused ->
-
-            if (!focused) {
-                binding?.layoutEnterPhoneCheckout?.helperText = validPhone()
-            }
-        }
-    }
-
-    private fun validPhone(): String? {
-        val phoneText = binding?.enterPhoneCheckout?.text.toString()
-        if (phoneText.length != 10) {
-            return "введен не корректный номер"
-        }
-        return null
-    }
-
 
 }

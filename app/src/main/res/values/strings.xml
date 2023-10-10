@@ -25,5 +25,7 @@
     <string name="helper_text_name">enter name*</string>
     <string name="helper_text_phone_required">required phone number</string>
     <string name="required">required</string>
+    <string name="load_text">LOADING</string>
+    <string name="error_connections">Error. No internet connection!</string>
 
 </resources>

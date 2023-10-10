@@ -5,6 +5,7 @@ import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.data.api.ApiClient
 import ru.perelyginva.myproject.data.dataSource.FoodApiDataSource
 import ru.perelyginva.myproject.data.dataSource.FoodDataSource
@@ -26,7 +27,7 @@ class FoodApiDataSourceIMPL(private val foodDataSource: FoodDataSource):FoodApiD
 
                 loadFood ?.clear()
 
-                loadFood= response.body()!!
+                loadFood = response.body()!!
 
                 for (audit in loadFood) {
 
@@ -46,13 +47,13 @@ class FoodApiDataSourceIMPL(private val foodDataSource: FoodDataSource):FoodApiD
 
                 }
 
-                Toast.makeText(context, "ЗАГРУЗКА", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.load_text, Toast.LENGTH_SHORT).show()
 
             }
 
             override fun onFailure(call: Call<ArrayList<FoodApiModel>>, t: Throwable) {
                 Toast.makeText(
-                    context, "ОШИБКА! ВКЛЮЧИТЕ ИНТЕРНЕТ!", Toast.LENGTH_SHORT).show()
+                    context, R.string.error_connections, Toast.LENGTH_SHORT).show()
 
             }
         })

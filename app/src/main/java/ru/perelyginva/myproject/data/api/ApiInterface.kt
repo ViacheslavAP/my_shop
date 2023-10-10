@@ -19,7 +19,7 @@ interface ApiInterface {
      * приложении для персонала принимающего заказы.
      */
     @FormUrlEncoded
-    @POST("insert.php")
+    @POST("insertInfoClient.php")
     fun insert(
         @Field ("name") name: String?,
         @Field ("phone") phone: String?,

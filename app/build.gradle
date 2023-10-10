@@ -47,7 +47,7 @@ dependencies {
     def arch_version = "2.1.0"
     def coroutines_version = "1.6.4"
     def koin_version = "3.2.2"
-    def picasso = "2.71828"
+    def picasso = "2.8"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'

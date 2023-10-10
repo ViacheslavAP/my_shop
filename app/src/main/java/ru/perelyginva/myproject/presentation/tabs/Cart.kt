@@ -1,12 +1,11 @@
 package ru.perelyginva.myproject.presentation.tabs
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.perelyginva.myproject.R
@@ -52,13 +51,13 @@ class Cart : Fragment(), View.OnClickListener {
 
     private fun loadFoodFromCart() {
 
-        cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner, Observer {
+        cartViewModel.loadFoodFromCart.observe(viewLifecycleOwner) { it ->
             cartAdapter?.setList(it)
             cartAdapter?.notifyDataSetChanged()
 
-            val total: Int = it.sumOf<CartModel> { it.totalPrice.toInt() }
+            val total: Int = it.sumOf { it.totalPrice.toInt() }
             binding?.totalPrice?.text = total.toString()
-        })
+        }
     }
 
     private fun deleteFromCart(cartModel: CartModel) {
