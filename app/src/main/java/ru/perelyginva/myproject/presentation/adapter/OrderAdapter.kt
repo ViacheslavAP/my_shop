@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.perelyginva.myproject.data.models.OrderLocalModel
 import ru.perelyginva.myproject.databinding.OrderItemBinding
 
-class  OrderAdapter() :
+class OrderAdapter() :
     RecyclerView.Adapter<OrderAdapter.CheckoutHolder>() {
 
     private val orders = ArrayList<OrderLocalModel>()
@@ -14,7 +14,8 @@ class  OrderAdapter() :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CheckoutHolder {
         val binding =
             OrderItemBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false)
+                LayoutInflater.from(parent.context), parent, false
+            )
 
         return CheckoutHolder(binding)
     }
@@ -25,12 +26,10 @@ class  OrderAdapter() :
     }
 
     override fun getItemCount(): Int {
-
         return orders.size
     }
 
     fun setList(orderList: List<OrderLocalModel>) {
-
         orders.clear()
         orders.addAll(orderList)
     }

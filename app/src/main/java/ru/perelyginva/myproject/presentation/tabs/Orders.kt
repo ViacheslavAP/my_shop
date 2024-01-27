@@ -10,18 +10,17 @@ import ru.perelyginva.myproject.databinding.FragmentOrdersBinding
 
 class Orders : Fragment() {
 
-    private var binding: FragmentOrdersBinding? = null
+    private var _binding: FragmentOrdersBinding? = null
+    private val binding
+        get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
-        binding = FragmentOrdersBinding.inflate(layoutInflater, container, false)
-
+        _binding = FragmentOrdersBinding.inflate(layoutInflater, container, false)
 
         return binding?.root
     }
-
 
 }
