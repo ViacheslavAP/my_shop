@@ -1,21 +1,15 @@
 package ru.perelyginva.myproject.presentation.tabs
 
-import android.app.Activity
-import  android.os.Bundle
-import android.util.Patterns
-import android.view.Gravity
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.constraintlayout.widget.ConstraintSet.Layout
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Observer
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.perelyginva.myproject.R
 import ru.perelyginva.myproject.databinding.FragmentCheckoutBinding
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
@@ -45,7 +39,7 @@ class Checkout : BottomSheetDialogFragment() {
             ) {
                 binding?.layoutEnterNameCheckout?.error = "Введите Имя"
                 return@OnClickListener
-            } else if (binding?.enterPhoneCheckout?.text?.length!! < 10  ) {
+            } else if (binding?.enterPhoneCheckout?.text?.length!! < 10) {
 
                 binding?.layoutEnterPhoneCheckout?.error = "Введите номер телефона"
                 return@OnClickListener
@@ -77,12 +71,13 @@ class Checkout : BottomSheetDialogFragment() {
                 }.joinToString()
 
                 //выводим сообщение о том, что карзина пуста
-                if (descriptionOrderAccount.isEmpty()){
+                if (descriptionOrderAccount.isEmpty()) {
                     binding?.submitCheckOut?.visibility = View.GONE
                     Toast.makeText(
                         (context as FragmentActivity),
                         "Вы ни чего не выбрали!",
-                        Toast.LENGTH_SHORT).show()
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 ordersApiViewModel.insert(
                     binding?.enterNameCheckout?.text.toString(),

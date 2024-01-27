@@ -40,11 +40,12 @@ class  OrderAdapter() :
 
         fun bind(orderLocalModel: OrderLocalModel) {
 
-            binding.nameUserCheckOut.text = orderLocalModel.nameUser
-            binding.phoneUserCheckOut.text = orderLocalModel.phoneUser
-            binding.descriptionCheckout.text = orderLocalModel.description
-            binding.totalCheckout.text = orderLocalModel.totalPrice
-
+            binding.apply {
+                nameUserCheckOut.text = orderLocalModel.nameUser
+                phoneUserCheckOut.text = orderLocalModel.phoneUser
+                descriptionCheckout.text = orderLocalModel.description
+                totalCheckout.text = orderLocalModel.totalPrice
+            }
         }
     }
 }

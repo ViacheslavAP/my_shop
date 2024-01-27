@@ -16,7 +16,6 @@ class ApiClient {
     }
 
     companion object{
-
         private var BASE_URL = "http://kolosok.perely2y.beget.tech/"
         private var apiClient: ApiClient? = null
         private var retrofit: Retrofit? = null
