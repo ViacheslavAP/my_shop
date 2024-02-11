@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "949962465148",
+    "project_id": "kolosok-616fd",
+    "storage_bucket": "kolosok-616fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949962465148:android:45767e6d7c8d1460b8cef9",
+        "android_client_info": {
+          "package_name": "ru.perelyginva.myproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAXcJ9F-fugcM5cKYwIc5c8ZrMaJuOn0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
