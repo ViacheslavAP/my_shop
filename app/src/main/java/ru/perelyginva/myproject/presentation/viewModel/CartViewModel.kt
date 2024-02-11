@@ -31,34 +31,28 @@ class CartViewModel(private val cartUseCase: CartUseCase) : ViewModel() {
     }
 
     private fun insert(cartModel: CartModel) = viewModelScope.launch {
-
         cartUseCase.insert(cartModel)
     }
 
     fun loadFoodToCartFromCartProduct(idProduct: String): LiveData<List<CartModel>> {
-
         return cartUseCase.loadFoodToCartFromCartProduct(idProduct)
     }
 
     fun updateProductFromCart(cartModel: CartModel) = viewModelScope.launch {
-
         cartUseCase.updateProductFromCart(cartModel)
     }
 
     //удаляет товар из корзины
     fun deleteProductFromCart(idProduct: Int) = viewModelScope.launch {
-
         cartUseCase.deleteProductFromCart(idProduct)
     }
 
     //удаляет из карзины, если мы обращаемся к товару из карточки
     fun deleteProductToCartFromCartProduct(idProduct: String) = viewModelScope.launch {
-
         cartUseCase.deleteProductToCartFromCardProduct(idProduct)
     }
 
     fun clearCart() = viewModelScope.launch {
-
         cartUseCase.clear()
     }
 }
