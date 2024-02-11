@@ -13,20 +13,17 @@ class FoodDataSourceIMPL(private val dao: FoodDao):FoodDataSource {
     override fun insert(foodModel: FoodModel){
 
         CoroutineScope(Dispatchers.IO).launch {
-
             dao.insert(foodModel)
         }
     }
 
     override fun loadFood(): LiveData<List<FoodModel>>{
-
         return dao.loadFood()
     }
 
     override suspend fun clear(){
 
         CoroutineScope(Dispatchers.IO).launch {
-
             dao.clear()
         }
     }

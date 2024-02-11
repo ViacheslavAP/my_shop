@@ -13,13 +13,12 @@ interface ApiInterface {
 
     @GET("loadFood.php")
     fun loadFoodApi(): Call<ArrayList<FoodApiModel>>
-
     /**
      * метод записи заказа на сервер. В дальнейшем нужно будет использовать в
      * приложении для персонала принимающего заказы.
      */
     @FormUrlEncoded
-    @POST("insert.php")
+    @POST("insertInfoClient.php")
     fun insert(
         @Field ("name") name: String?,
         @Field ("phone") phone: String?,

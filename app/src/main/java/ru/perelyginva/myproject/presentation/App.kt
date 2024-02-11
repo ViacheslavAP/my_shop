@@ -13,13 +13,9 @@ class App: Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         startKoin {
-
             androidLogger()
-
             androidContext(this@App)
-
             modules(food, cart, order, orderApi)
         }
     }

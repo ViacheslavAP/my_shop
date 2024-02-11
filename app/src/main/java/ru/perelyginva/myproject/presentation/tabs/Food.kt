@@ -15,14 +15,12 @@ import ru.perelyginva.myproject.presentation.adapter.FoodAdapter
 import ru.perelyginva.myproject.presentation.viewModel.CartViewModel
 import ru.perelyginva.myproject.presentation.viewModel.FoodViewModel
 
-
 class Food : Fragment() {
 
     private var binding: FragmentFoodBinding? = null
     private var foodAdapter: FoodAdapter? = null
     private val foodViewModel: FoodViewModel by viewModel()
     private val cartViewModel: CartViewModel by viewModel()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +30,6 @@ class Food : Fragment() {
 
         initRecyclerFood()
         loafFood()
-
-
         return binding?.root
     }
 
@@ -46,10 +42,11 @@ class Food : Fragment() {
             { foodModel: FoodModel ->
                 removeFromCart(foodModel)
             },
-
-            { idProduct: Int,
-              addToBasket: AppCompatImageButton,
-              removeFromBasket: AppCompatImageButton ->
+            {
+                    idProduct: Int,
+                    addToBasket: AppCompatImageButton,
+                    removeFromBasket: AppCompatImageButton,
+                ->
                 loadFoodToCartFromCartProduct(idProduct, addToBasket, removeFromBasket)
             })
 
@@ -57,27 +54,27 @@ class Food : Fragment() {
     }
 
     private fun loafFood() {
-        foodViewModel.loadFood.observe(viewLifecycleOwner, Observer {
-
+        foodViewModel.loadFood.observe(viewLifecycleOwner) {
             foodAdapter?.setList(it)
+            TODO("переделать на diffUtil")
             foodAdapter?.notifyDataSetChanged()
-        })
+        }
     }
 
     private fun addToCart(foodModel: FoodModel) {
-
         cartViewModel.startInsert(
             foodModel.image,
             foodModel.name,
             foodModel.price,
             foodModel.id.toString(),
-            "1")
+            "1"
+        )
     }
 
     private fun removeFromCart(foodModel: FoodModel) {
-
         cartViewModel.deleteProductToCartFromCartProduct(
-            foodModel.id.toString())
+            foodModel.id.toString()
+        )
     }
 
     private fun loadFoodToCartFromCartProduct(
@@ -89,14 +86,11 @@ class Food : Fragment() {
         //кнопку добавить, если что то есть, то кнопку удалить
         cartViewModel.loadFoodToCartFromCartProduct(idProduct.toString())
             .observe(viewLifecycleOwner, Observer {
-
                 val count = it.count()
                 if (count > 0) {
-
                     addToBasket.visibility = View.GONE
                     removeFromBasket.visibility = View.VISIBLE
                 } else {
-
                     addToBasket.visibility = View.VISIBLE
                     removeFromBasket.visibility = View.GONE
                 }
