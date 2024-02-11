@@ -56,7 +56,6 @@ class Food : Fragment() {
     private fun loafFood() {
         foodViewModel.loadFood.observe(viewLifecycleOwner) {
             foodAdapter?.setList(it)
-            TODO("переделать на diffUtil")
             foodAdapter?.notifyDataSetChanged()
         }
     }
