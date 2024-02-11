@@ -22,7 +22,6 @@ class FoodDataSourceIMPL(private val dao: FoodDao):FoodDataSource {
     }
 
     override suspend fun clear(){
-
         CoroutineScope(Dispatchers.IO).launch {
             dao.clear()
         }

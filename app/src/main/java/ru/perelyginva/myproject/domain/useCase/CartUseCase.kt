@@ -22,25 +22,20 @@ class CartUseCase(private val cartCall: CartCall) {
     }
 
     suspend  fun updateProductFromCart(cartModel: CartModel){
-
         CoroutineScope(Dispatchers.IO).launch {
-
             cartCall.updateProductFromCart(cartModel)
         }
     }
 
     suspend fun deleteProductFromCart(idProduct: Int){
-
         return cartCall.deleteProductFromCart(idProduct)
     }
 
     suspend fun deleteProductToCartFromCardProduct(idProduct: String){
-
         return cartCall.deleteProductToCartFromCardProduct(idProduct)
     }
 
      suspend fun clear(){
-
         cartCall.clear()
     }
 }

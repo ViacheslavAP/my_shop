@@ -12,8 +12,8 @@ import ru.perelyginva.myproject.data.models.OrdersApiModel
     FoodModel::class,
     OrderLocalModel::class,
     OrdersApiModel::class], version = 1)
-abstract  class DatabaseFood: RoomDatabase() {
 
+abstract  class DatabaseFood: RoomDatabase() {
     abstract val cartDao: CartDao
     abstract val foodDao: FoodDao
     abstract val orderLocalDao: OrderLocalDao

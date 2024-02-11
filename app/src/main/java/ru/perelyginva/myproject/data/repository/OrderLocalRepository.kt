@@ -17,7 +17,6 @@ class OrderLocalRepository(private val orderLocalDao: OrderLocalDao) : OrderLoca
        return orderLocalDao.loadOrder()
     }
 
-
     override suspend fun deleteAllOrders() {
         orderLocalDao.deleteAll()
     }

@@ -9,19 +9,20 @@ import ru.perelyginva.myproject.domain.repository.OrdersApiCall
 
 class OrdersApiRepository : OrdersApiCall {
 
-   override fun insert(
-        name:String,
-        phone:String,
+    override fun insert(
+        name: String,
+        phone: String,
         descriptions: String,
-        priceOrder: String){
+        priceOrder: String,
+    ) {
 
         val callInsertCategory: Call<ResponseBody?>? = ApiClient.instance?.api?.insert(
             name,
             phone,
             descriptions,
-            priceOrder)
-
-        callInsertCategory?.enqueue(object: retrofit2.Callback<ResponseBody?> {
+            priceOrder
+        )
+        callInsertCategory?.enqueue(object : retrofit2.Callback<ResponseBody?> {
 
             override fun onResponse(call: Call<ResponseBody?>, response: Response<ResponseBody?>) {
             }
@@ -31,7 +32,6 @@ class OrdersApiRepository : OrdersApiCall {
                 insert(name, phone, descriptions, priceOrder)
             }
         })
-
 
 
     }

@@ -13,7 +13,8 @@ import ru.perelyginva.myproject.databinding.FoodItemBinding
 class FoodAdapter(
     private val addToCart: (FoodModel) -> Unit,
     private val removeFromCart: (FoodModel) -> Unit,
-    private val loadFoodToCartFromCartProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit) :
+    private val loadFoodToCartFromCartProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit,
+) :
 
     RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
 
@@ -22,62 +23,57 @@ class FoodAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodHolder {
 
         val binding: FoodItemBinding = FoodItemBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false)
-
+            LayoutInflater.from(parent.context), parent, false
+        )
         return FoodHolder(binding)
     }
 
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {
-
         holder.bind(
             food[position],
             addToCart,
             removeFromCart,
-            loadFoodToCartFromCartProduct)
+            loadFoodToCartFromCartProduct
+        )
     }
 
     override fun getItemCount(): Int {
-
         return food.size
     }
 
     fun setList(foodList: List<FoodModel>) {
-
         food.clear()
         food.addAll(foodList)
     }
 
     class FoodHolder(private val binding: FoodItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(
             foodModel: FoodModel,
             addToCart: (FoodModel) -> Unit,
             removeFromCart: (FoodModel) -> Unit,
-            loadFoodToCartFromCartProduct: (Int, AppCompatImageButton, AppCompatImageButton) -> Unit
-        ){
-
+            loadFoodToCartFromCartProduct: (
+                Int,
+                AppCompatImageButton,
+                AppCompatImageButton,
+            ) -> Unit,
+        ) {
             val getImage = foodModel.image
             Picasso.get().load(getImage).into(binding.imageFood)
             binding.nameFood.text = foodModel.name
             binding.descriptionFood.text = foodModel.descriptions
             binding.priceCoffee.text = foodModel.price
-
             binding.addToCart.setOnClickListener(View.OnClickListener {
                 addToCart(foodModel)
             })
-
-            binding.removeFromCart .setOnClickListener(View.OnClickListener {
-                removeFromCart (foodModel)
+            binding.removeFromCart.setOnClickListener(View.OnClickListener {
+                removeFromCart(foodModel)
             })
-
-           binding.cardFood.setOnClickListener {
-               binding.descriptionFood.apply {
-                   isVisible = !isVisible
-               }
-
-           }
-
+            binding.cardFood.setOnClickListener {
+                binding.descriptionFood.apply {
+                    isVisible = !isVisible
+                }
+            }
 
             loadFoodToCartFromCartProduct(foodModel.id, binding.addToCart, binding.removeFromCart)
         }

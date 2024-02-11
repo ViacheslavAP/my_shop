@@ -19,5 +19,4 @@ interface OrderLocalDao {
    @Query("DELETE FROM order_local_data_table")
 
    suspend fun deleteAll()
-
 }

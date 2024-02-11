@@ -24,27 +24,20 @@ class CartRepository(private val dao: CartDao) : CartCall {
 
     //обновление позиции товара
     override suspend fun updateProductFromCart(cartModel: CartModel) {
-
         dao.updateProductFromCart(cartModel)
     }
 
     override suspend fun deleteProductFromCart(idProduct: Int) {
-
         CoroutineScope(Dispatchers.IO).launch {
-
             dao.deleteProductFromCart(idProduct)
         }
     }
 
     override suspend fun deleteProductToCartFromCardProduct(idProduct: String) {
-
         CoroutineScope(Dispatchers.IO).launch {
-
             dao.deleteProductToCartFromCardProduct(idProduct)
         }
     }
 
-    override suspend fun clear() {
-        dao.clear()
-    }
+    override suspend fun clear() { dao.clear() }
 }

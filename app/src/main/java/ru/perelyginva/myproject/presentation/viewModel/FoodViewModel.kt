@@ -11,7 +11,6 @@ class FoodViewModel(private val foodUseCase: FoodUseCase): ViewModel()  {
     val loadFood = foodUseCase.loadFood()
 
     fun migrations(context: Context) = viewModelScope.launch {
-
         foodUseCase.startMigration(context)
     }
 }

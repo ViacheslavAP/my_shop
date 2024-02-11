@@ -8,12 +8,10 @@ import ru.perelyginva.myproject.domain.repository.FoodCall
 class FoodUseCase(private val foodCall: FoodCall) {
 
     fun loadFood(): LiveData<List<FoodModel>>{
-
         return foodCall.loadFood()
     }
 
     suspend fun startMigration(context: Context){
-
         foodCall.startMigration(context)
     }
 }

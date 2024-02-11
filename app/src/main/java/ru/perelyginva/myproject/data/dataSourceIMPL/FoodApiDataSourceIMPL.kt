@@ -12,25 +12,21 @@ import ru.perelyginva.myproject.data.dataSource.FoodDataSource
 import ru.perelyginva.myproject.data.models.FoodApiModel
 import ru.perelyginva.myproject.data.models.FoodModel
 
-class FoodApiDataSourceIMPL(private val foodDataSource: FoodDataSource):FoodApiDataSource {
+class FoodApiDataSourceIMPL(private val foodDataSource: FoodDataSource) : FoodApiDataSource {
 
-    override fun startMigration (context: Context) {
+    override fun startMigration(context: Context) {
 
         val call = ApiClient.instance?.api?.loadFoodApi()
-        call?.enqueue(object: Callback<ArrayList<FoodApiModel>> {
+        call?.enqueue(object : Callback<ArrayList<FoodApiModel>> {
+
             override fun onResponse(
                 call: Call<ArrayList<FoodApiModel>>,
-                response: Response<ArrayList<FoodApiModel>>
+                response: Response<ArrayList<FoodApiModel>>,
             ) {
-
                 var loadFood: ArrayList<FoodApiModel>? = null
-
-                loadFood ?.clear()
-
+                loadFood?.clear()
                 loadFood = response.body()!!
-
                 for (audit in loadFood) {
-
                     audit.id?.let {
                         FoodModel(
                             it,
@@ -40,23 +36,18 @@ class FoodApiDataSourceIMPL(private val foodDataSource: FoodDataSource):FoodApiD
                             audit.price.toString()
                         )
                     }?.let {
-                        foodDataSource.insert(
-                            it
-                        )
+                        foodDataSource.insert(it)
                     }
-
                 }
-
                 Toast.makeText(context, R.string.load_text, Toast.LENGTH_SHORT).show()
-
             }
 
             override fun onFailure(call: Call<ArrayList<FoodApiModel>>, t: Throwable) {
+                //TODO("Заменить тост на диалоги")
                 Toast.makeText(
-                    context, R.string.error_connections, Toast.LENGTH_SHORT).show()
-
+                    context, R.string.error_connections, Toast.LENGTH_SHORT
+                ).show()
             }
         })
-
     }
 }

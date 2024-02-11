@@ -13,12 +13,10 @@ class FoodRepository(
 ) : FoodCall {
 
     override fun loadFood(): LiveData<List<FoodModel>>{
-
         return foodDataSource.loadFood()
     }
 
     override suspend fun startMigration(context: Context){
-
         foodDataSource.clear()
         foodApiDataSource.startMigration(context)
     }
