@@ -52,9 +52,7 @@ class Food : Fragment() {
 
     private fun loafFood() {
         foodViewModel.loadFood.observe(viewLifecycleOwner) {
-            foodAdapter?.setList(it)
-            //TODO("Замена на List")
-            foodAdapter?.notifyDataSetChanged()
+            foodAdapter?.submitList(it)
         }
     }
 
