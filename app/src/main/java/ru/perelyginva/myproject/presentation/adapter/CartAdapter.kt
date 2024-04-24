@@ -20,7 +20,8 @@ class CartAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartHolder {
         val binding =
             CartItemBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false)
+                LayoutInflater.from(parent.context), parent, false
+            )
 
         return CartHolder(binding)
     }
@@ -45,7 +46,8 @@ class CartAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            cartModel: CartModel, deleteFromCart: (CartModel) -> Unit,
+            cartModel: CartModel,
+            deleteFromCart: (CartModel) -> Unit,
             lessCount: (CartModel) -> Unit,
             moreCount: (CartModel) -> Unit,
         ) {

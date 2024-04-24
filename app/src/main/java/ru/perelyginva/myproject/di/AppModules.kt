@@ -27,53 +27,33 @@ import ru.perelyginva.myproject.presentation.viewModel.OrderLocalViewModel
 import ru.perelyginva.myproject.presentation.viewModel.OrdersApiViewModel
 
 val food = module {
-
     single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "foodDB").build() }
-
     single { get<DatabaseFood>().foodDao }
-
     single<FoodDataSource> { FoodDataSourceIMPL(get()) }
-
     single<FoodApiDataSource> { FoodApiDataSourceIMPL(get()) }
-
     single<FoodCall> { FoodRepository(get(), get()) }
-
     single { FoodUseCase(get()) }
-
     viewModel { FoodViewModel(get()) }
 }
 
 val cart = module {
-
     single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "cartDB").build() }
-
     single { get<DatabaseFood>().cartDao }
-
     single<CartCall> { CartRepository(get()) }
-
     single { CartUseCase(get()) }
-
     viewModel { CartViewModel(get()) }
 }
 
 val order = module {
-
     single { Room.databaseBuilder(androidContext(), DatabaseFood::class.java, "orderDB").build() }
-
     single { get<DatabaseFood>().orderLocalDao }
-
     single<OrderLocalCall> { OrderLocalRepository(get()) }
-
     single { OrderLocalUseCase(get()) }
-
     viewModel { OrderLocalViewModel(get()) }
 }
 
 val orderApi = module {
-
     single<OrdersApiCall> { OrdersApiRepository() }
-
     single { OrdersApiUseCase(get()) }
-
     viewModel { OrdersApiViewModel(get()) }
 }

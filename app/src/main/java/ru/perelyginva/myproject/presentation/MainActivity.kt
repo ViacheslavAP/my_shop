@@ -24,9 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding?.root)
 
         foodViewModel.migrations(this)
-
         supportFragmentManager.beginTransaction().replace(R.id.content, Home()).commit()
-
         loadFoodToCart()
 
         binding?.bottomMainMenu?.setOnItemSelectedListener { item ->
@@ -50,7 +48,6 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.content, Account()).commit()
                 }
-
             }
             return@setOnItemSelectedListener true
         }
@@ -59,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     private fun loadFoodToCart() {
 
         cartViewModel.loadFoodFromCart.observe(this, Observer {
-
             val count = it.count()
             val badge = binding?.bottomMainMenu?.getOrCreateBadge(R.id.cart_menu)
             badge?.isVisible = count > 0

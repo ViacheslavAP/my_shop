@@ -4,19 +4,15 @@
     <color name="green_600">#76d275</color>
     <color name="space_cream">#FFF5E6</color>
     <color name="brown_beige">#947333</color>
+    <color name="brown_beige_2">#652A09</color>
+    <color name="brown_beige_3">#58331E</color>
+    <color name="brown_beige_4">#905E42</color>
     <color name="color_card">#F7DEAE</color>
-
-    <color name="purple_200">#b98eb1</color>
-    <color name="purple_300">#a16296</color>
-    <color name="purple_400">#934086</color>
-    <color name="purple_500">#831f76</color>
-    <color name="purple_600">#781b71</color>
-    <color name="purple_700">#69146a</color>
-
+    <color name="purple_200">#ce93d8</color>
+    <color name="purple_700">#7b1fa2</color>
     <color name="teal_200">#98e1ab</color>
     <color name="teal_400">#3acc6d</color>
     <color name="teal_700">#009f3b</color>
-
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="error_red">#B71C1C</color>

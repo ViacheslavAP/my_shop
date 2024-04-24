@@ -45,21 +45,21 @@
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toTopOf="@+id/priceCoffee"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.638"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.259"
+                app:layout_constraintStart_toEndOf="@+id/imageFood"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.528"
+                app:layout_constraintVertical_bias="0.622"
                 tools:text="@string/app_name" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/priceCoffee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="68dp"
                 android:layout_marginBottom="56dp"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/imageFood"
+                app:layout_constraintStart_toStartOf="@+id/nameFood"
                 tools:text="1000" />
 
             <androidx.appcompat.widget.AppCompatImageView
