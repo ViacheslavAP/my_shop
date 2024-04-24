@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.tabs.Account"
     android:orientation="vertical"
-    >
+    tools:context=".presentation.tabs.Account">
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/clear_order_in_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle"
-        android:layout_marginTop="10dp"
-        android:text="@string/delete"
         android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="@dimen/margin_5"
         android:layout_marginBottom="@dimen/margin_5"
-        tools:ignore="SpeakableTextPresentCheck"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rectangle"
+        android:text="@string/delete"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOrders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/order_item"
-        />
+        tools:listitem="@layout/order_item" />
 
 
 </LinearLayout>

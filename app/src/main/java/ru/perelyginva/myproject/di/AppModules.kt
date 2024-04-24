@@ -1,4 +1,4 @@
-package ru.perelyginva.myproject.presentation.di
+package ru.perelyginva.myproject.di
 
 import androidx.room.Room
 import org.koin.android.ext.koin.androidContext

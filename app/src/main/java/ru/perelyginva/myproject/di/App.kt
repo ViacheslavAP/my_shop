@@ -1,13 +1,13 @@
-package ru.perelyginva.myproject.presentation
+package ru.perelyginva.myproject.di
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
-import ru.perelyginva.myproject.presentation.di.cart
-import ru.perelyginva.myproject.presentation.di.food
-import ru.perelyginva.myproject.presentation.di.order
-import ru.perelyginva.myproject.presentation.di.orderApi
+import ru.perelyginva.myproject.di.cart
+import ru.perelyginva.myproject.di.food
+import ru.perelyginva.myproject.di.order
+import ru.perelyginva.myproject.di.orderApi
 
 class App: Application() {
 
